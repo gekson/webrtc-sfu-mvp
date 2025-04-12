@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <!--
+    SPDX-FileCopyrightText: 2023 The Pion community <https://pion.ly>
+    SPDX-License-Identifier: MIT
+  -->
+
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .container {
+        display: flex;
+        gap: 20px;
+      }
+      .video-section {
+        flex: 2;
+      }
+      .chat-section {
+        flex: 1;
+        max-width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+      }
+      .chat-messages {
+        height: 300px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 4px;
+      }
+      .chat-input {
+        display: flex;
+        gap: 10px;
+      }
+      .chat-input input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .chat-input button {
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .chat-input button:hover {
+        background-color: #0056b3;
+      }
+      .message {
+        margin-bottom: 8px;
+        padding: 8px;
+        border-radius: 4px;
+        background-color: #f8f9fa;
+      }
+      .message.sent {
+        background-color: #e3f2fd;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="video-section">
+        <h3> Local Video </h3>
+        <video id="localVideo" width="160" height="120" autoplay muted></video> <br />
+
+        <h3> Remote Video </h3>
+        <div id="remoteVideos"></div> <br />
+
+        <h3> Logs </h3>
+        <div id="logs"></div>
+      </div>
+
+      <div class="chat-section">
+        <h3>Chat</h3>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input">
+          <input type="text" id="messageInput" placeholder="Digite sua mensagem..." />
+          <button onclick="sendMessage()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    .then(stream => {
+      let pc = new RTCPeerConnection()
+      pc.ontrack = function (event) {
+        if (event.track.kind === 'audio') {
+          return
+        }
+
+        let el = document.createElement(event.track.kind)
+        el.srcObject = event.streams[0]
+        el.autoplay = true
+        el.controls = true
+        document.getElementById('remoteVideos').appendChild(el)
+
+        event.track.onmute = function(event) {
+          el.play()
+        }
+
+        event.streams[0].onremovetrack = ({track}) => {
+          if (el.parentNode) {
+            el.parentNode.removeChild(el)
+          }
+        }
+      }
+
+      document.getElementById('localVideo').srcObject = stream
+      stream.getTracks().forEach(track => pc.addTrack(track, stream))
+
+      let ws = new WebSocket("{{.}}");
+
+      window.sendMessage = function() {
+        const messageInput = document.getElementById('messageInput');
+        const message = messageInput.value.trim();
+        if (message) {
+          ws.send(JSON.stringify({event: 'chat', data: message}));
+          addMessage(message, true);
+          messageInput.value = '';
+        }
+      }
+      pc.onicecandidate = e => {
+        if (!e.candidate) {
+          return
+        }
+
+        ws.send(JSON.stringify({event: 'candidate', data: JSON.stringify(e.candidate)}))
+      }
+
+      ws.onclose = function(evt) {
+        window.alert("Websocket has closed")
+      }
+
+      function addMessage(message, sent = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sent ? 'sent' : ''}`;
+        messageDiv.textContent = message;
+        document.getElementById('chatMessages').appendChild(messageDiv);
+        document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+      }
+
+
+
+      document.getElementById('messageInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+
+      ws.onmessage = function(evt) {
+        let msg = JSON.parse(evt.data)
+        if (!msg) {
+          return console.log('failed to parse msg')
+        }
+
+        switch (msg.event) {
+          case 'offer':
+            let offer = JSON.parse(msg.data)
+            if (!offer) {
+              return console.log('failed to parse offer')
+            }
+            pc.setRemoteDescription(offer)
+              .then(() => pc.createAnswer())
+              .then(answer => {
+                return pc.setLocalDescription(answer)
+                  .then(() => {
+                    ws.send(JSON.stringify({event: 'answer', data: JSON.stringify(answer)}))
+                  })
+              })
+              .catch(err => console.error('Error handling offer:', err))
+            return
+
+          case 'candidate':
+            let candidate = JSON.parse(msg.data)
+            if (!candidate) {
+              return console.log('failed to parse candidate')
+            }
+            pc.addIceCandidate(candidate)
+              .catch(err => console.error('Error adding ICE candidate:', err))
+            break
+
+          case 'chat':
+            addMessage(msg.data)
+            break
+        }
+      }
+
+      ws.onerror = function(evt) {
+        console.log("ERROR: " + evt.data)
+      }
+    }).catch(window.alert)
+  </script>
+</html>
