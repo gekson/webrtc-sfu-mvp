@@ -41,75 +41,86 @@ class ChatWidgetState extends State<ChatWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.3),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              controller: _scrollController,
-              padding: const EdgeInsets.all(8),
-              itemCount: _messages.length,
-              itemBuilder: (context, index) {
-                final message = _messages[index];
-                return MessageBubble(
-                  message: message.message,
-                  isMe: message.isMe,
-                );
-              },
-            ),
+    // Ajusta o layout com base na orientação do dispositivo
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            controller: _scrollController,
+            padding: const EdgeInsets.all(4), // Padding reduzido
+            itemCount: _messages.length,
+            itemBuilder: (context, index) {
+              final message = _messages[index];
+              return MessageBubble(
+                message: message.message,
+                isMe: message.isMe,
+              );
+            },
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            margin: const EdgeInsets.all(8),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _messageController,
-                    style: const TextStyle(color: Colors.white, fontSize: 16),
-                    minLines: 1,
-                    maxLines: 3,
-                    decoration: InputDecoration(
-                      hintText: 'Digite sua mensagem...',
-                      hintStyle:
-                          TextStyle(color: Colors.white.withOpacity(0.6)),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide:
-                            BorderSide(color: Colors.white.withOpacity(0.3)),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide:
-                            BorderSide(color: Colors.white.withOpacity(0.3)),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: const BorderSide(color: Colors.blue),
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 8),
+        ),
+        Container(
+          padding:
+              const EdgeInsets.symmetric(horizontal: 4), // Padding reduzido
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          margin: EdgeInsets.symmetric(
+              horizontal: 4,
+              vertical:
+                  isLandscape ? 2 : 8), // Margem reduzida em modo paisagem
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: _messageController,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: isLandscape
+                          ? 14
+                          : 16), // Fonte menor em modo paisagem
+                  minLines: 1,
+                  maxLines: 1,
+                  decoration: InputDecoration(
+                    hintText: 'Digite sua mensagem...',
+                    hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide:
+                          BorderSide(color: Colors.white.withOpacity(0.3)),
                     ),
-                    onSubmitted: (_) => _handleSubmit(),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide:
+                          BorderSide(color: Colors.white.withOpacity(0.3)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(color: Colors.blue),
+                    ),
+                    contentPadding: isLandscape
+                        ? const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 4) // Padding reduzido em modo paisagem
+                        : const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 8),
                   ),
+                  onSubmitted: (_) => _handleSubmit(),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.send, color: Colors.white),
-                  onPressed: _handleSubmit,
-                ),
-              ],
-            ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.send, color: Colors.white),
+                iconSize: isLandscape ? 20 : 24, // Ícone menor em modo paisagem
+                onPressed: _handleSubmit,
+                padding: EdgeInsets.zero, // Remove o padding do botão
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -126,28 +137,36 @@ class MessageBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Ajusta o layout com base na orientação do dispositivo
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      padding: EdgeInsets.symmetric(
+          vertical: isLandscape ? 2 : 4, horizontal: isLandscape ? 4 : 8),
       child: Row(
         mainAxisAlignment:
             isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
           Container(
             constraints: BoxConstraints(
-              maxWidth: MediaQuery.of(context).size.width * 0.7,
+              maxWidth:
+                  MediaQuery.of(context).size.width * (isLandscape ? 0.6 : 0.7),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            padding: EdgeInsets.symmetric(
+                horizontal: isLandscape ? 8 : 12,
+                vertical: isLandscape ? 4 : 8),
             decoration: BoxDecoration(
               color: isMe
                   ? Colors.blue.withOpacity(0.8)
                   : Colors.white.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(isLandscape ? 12 : 16),
             ),
             child: Text(
               message,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 14,
+                fontSize: isLandscape ? 12 : 14,
               ),
             ),
           ),

@@ -195,9 +195,7 @@ class _MyAppState extends State<MyApp> {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('WebRTC Chat'),
-        ),
+        // Removida a AppBar para ganhar mais espaço útil na tela
         body: Stack(
           children: [
             // Vídeo remoto em tela cheia
@@ -209,16 +207,21 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-            // Chat flutuante com fundo semi-transparente
+            // Chat flutuante com fundo 100% transparente - ajustado para melhor visualização em modo paisagem
             Positioned(
               left: 0,
               bottom: 0,
-              width: MediaQuery.of(context).size.width * 0.3,
-              height: MediaQuery.of(context).size.height * 0.5,
+              width: MediaQuery.of(context).size.width * 0.8, // 80% da largura
+              height:
+                  MediaQuery.of(context).orientation == Orientation.landscape
+                      ? MediaQuery.of(context).size.height *
+                          0.5 // 50% da altura em modo paisagem
+                      : MediaQuery.of(context).size.height *
+                          0.3, // 30% da altura em modo retrato
               child: Container(
-                margin: const EdgeInsets.all(16),
+                margin: const EdgeInsets.all(8), // Margem reduzida
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.5),
+                  color: Colors.transparent, // Fundo 100% transparente
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: ChatWidget(
@@ -227,12 +230,17 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-            // Vídeo local flutuante
+            // Vídeo local flutuante - ajustado para evitar cortes em modo paisagem
             Positioned(
               right: 16,
-              bottom: 16,
-              width: 180,
-              height: 120,
+              top: 16, // Posicionado no topo para evitar cortes
+              width: MediaQuery.of(context).orientation == Orientation.landscape
+                  ? 120
+                  : 180,
+              height:
+                  MediaQuery.of(context).orientation == Orientation.landscape
+                      ? 90
+                      : 120,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
