@@ -16,6 +16,8 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/joho/godotenv"
+
 	"github.com/gorilla/websocket"
 	"github.com/pion/logging"
 	"github.com/pion/rtcp"
@@ -65,6 +67,11 @@ type peerConnectionState struct {
 }
 
 func main() {
+	// Load .env file
+	if err := godotenv.Load(); err != nil {
+		log.Infof("Arquivo .env não encontrado, usando configurações padrão")
+	}
+
 	// Parse the flags passed to program
 	flag.Parse()
 
@@ -91,8 +98,15 @@ func main() {
 		// Get host from environment variable or fallback to request host
 		host := os.Getenv("SERVER_HOST")
 		if host == "" {
+			// Se não houver SERVER_HOST definido, usa o Host do request
 			host = r.Host
 		}
+		log.Infof("Endereço do servidor detectado: %s (SERVER_HOST=%s, RemoteAddr=%s, X-Forwarded-For=%s)",
+			host,
+			os.Getenv("SERVER_HOST"),
+			r.RemoteAddr,
+			r.Header.Get("X-Forwarded-For"))
+		log.Infof("Usando host: %s (SERVER_HOST=%s)", host, os.Getenv("SERVER_HOST"))
 
 		wsURL := scheme + "://" + host + "/websocket"
 		log.Infof("WebSocket URL: %s", wsURL)
@@ -261,12 +275,15 @@ func dispatchKeyFrame() {
 
 // Handle incoming websockets
 func websocketHandler(w http.ResponseWriter, r *http.Request) {
+	log.Infof("Nova conexão WebSocket recebida de %s (Origin: %s)", r.RemoteAddr, r.Header.Get("Origin"))
+
 	// Upgrade HTTP request to Websocket
 	unsafeConn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
-		log.Errorf("Failed to upgrade HTTP to Websocket: ", err)
+		log.Errorf("Failed to upgrade HTTP to Websocket: %v (Headers: %v)", err, r.Header)
 		return
 	}
+	log.Infof("Conexão WebSocket estabelecida com sucesso para %s", r.RemoteAddr)
 
 	c := &threadSafeWriter{unsafeConn, sync.Mutex{}}
 
