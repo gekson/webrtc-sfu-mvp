@@ -5,12 +5,14 @@ class LocalVideoWidget extends StatefulWidget {
   final RTCVideoRenderer localRenderer;
   final Function(bool) onToggleCamera;
   final Function(bool) onToggleMicrophone;
+  final bool canEnableCamera;
 
   const LocalVideoWidget({
     Key? key,
     required this.localRenderer,
     required this.onToggleCamera,
     required this.onToggleMicrophone,
+    this.canEnableCamera = true,
   }) : super(key: key);
 
   @override
@@ -22,6 +24,15 @@ class _LocalVideoWidgetState extends State<LocalVideoWidget> {
   bool _isMicrophoneOn = true;
 
   void _toggleCamera() {
+    // Verifica se o usuário tem permissão para ativar a câmera
+    if (!widget.canEnableCamera && !_isCameraOn) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('Você não tem permissão para ativar a câmera')),
+      );
+      return;
+    }
+
     setState(() {
       _isCameraOn = !_isCameraOn;
     });
@@ -61,13 +72,18 @@ class _LocalVideoWidgetState extends State<LocalVideoWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                backgroundColor: _isCameraOn ? Colors.green : Colors.red,
+                backgroundColor: _isCameraOn
+                    ? Colors.green
+                    : (widget.canEnableCamera ? Colors.red : Colors.grey),
                 child: IconButton(
                   icon: Icon(
                     _isCameraOn ? Icons.videocam : Icons.videocam_off,
                     color: Colors.white,
                   ),
                   onPressed: _toggleCamera,
+                  tooltip: widget.canEnableCamera
+                      ? 'Alternar câmera'
+                      : 'Solicitar permissão para câmera',
                 ),
               ),
               const SizedBox(width: 16),
