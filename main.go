@@ -263,13 +263,20 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 	// When this frame returns close the Websocket
 	defer c.Close() //nolint
 
-	// Create new PeerConnection with STUN server configuration
+	// Create new PeerConnection with multiple STUN servers for better connectivity
 	peerConnection, err := webrtc.NewPeerConnection(webrtc.Configuration{
 		ICEServers: []webrtc.ICEServer{
 			{
-				URLs: []string{"stun:stun.l.google.com:19302"},
+				URLs: []string{
+					"stun:stun.l.google.com:19302",
+					"stun:stun1.l.google.com:19302",
+					"stun:stun2.l.google.com:19302",
+					"stun:stun3.l.google.com:19302",
+					"stun:stun4.l.google.com:19302",
+				},
 			},
 		},
+		ICETransportPolicy: webrtc.ICETransportPolicyAll,
 	})
 	if err != nil {
 		log.Errorf("Failed to creates a PeerConnection: %v", err)
