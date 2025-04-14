@@ -364,8 +364,16 @@
         stream.getTracks().forEach(track => pc.addTrack(track, stream))
         document.getElementById('logs').innerHTML += '<div>Vídeo local configurado</div>';
 
-        let ws = new WebSocket("{{.}}");
+        let ws = new WebSocket(getWebSocketUrl());
         document.getElementById('logs').innerHTML += '<div>Conectando ao servidor...</div>';
+
+        // Função para determinar a URL do WebSocket baseado no ambiente
+        function getWebSocketUrl() {
+          // O servidor Go já injetou a URL completa do WebSocket
+          const wsUrl = '{{.}}';
+          console.log('WebSocket URL:', wsUrl);
+          return wsUrl;
+        }
         
         ws.onopen = function() {
           console.log('WebSocket connection established');

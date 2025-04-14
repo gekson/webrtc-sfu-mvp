@@ -87,7 +87,17 @@ func main() {
 		if r.TLS != nil {
 			scheme = "wss"
 		}
-		if err = indexTemplate.Execute(w, scheme+"://"+r.Host+"/websocket"); err != nil {
+
+		// Get host from environment variable or fallback to request host
+		host := os.Getenv("SERVER_HOST")
+		if host == "" {
+			host = r.Host
+		}
+
+		wsURL := scheme + "://" + host + "/websocket"
+		log.Infof("WebSocket URL: %s", wsURL)
+
+		if err = indexTemplate.Execute(w, wsURL); err != nil {
 			log.Errorf("Failed to parse index template: %v", err)
 		}
 	})
