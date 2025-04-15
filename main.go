@@ -290,8 +290,16 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 	// When this frame returns close the Websocket
 	defer c.Close() //nolint
 
-	// Create new PeerConnection with multiple STUN servers for better connectivity
-	peerConnection, err := webrtc.NewPeerConnection(webrtc.Configuration{
+	// Create new PeerConnection with multiple STUN servers and port range configuration
+	portStart := uint16(50000)
+	portEnd := uint16(50020)
+
+	settingEngine := webrtc.SettingEngine{}
+	settingEngine.SetEphemeralUDPPortRange(portStart, portEnd)
+
+	api := webrtc.NewAPI(webrtc.WithSettingEngine(settingEngine))
+
+	peerConnection, err := api.NewPeerConnection(webrtc.Configuration{
 		ICEServers: []webrtc.ICEServer{
 			{
 				URLs: []string{
@@ -300,6 +308,8 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 					"stun:stun2.l.google.com:19302",
 					"stun:stun3.l.google.com:19302",
 					"stun:stun4.l.google.com:19302",
+					"stun:stun.stunprotocol.org:3478",
+					"stun:stun.voip.blackberry.com:3478",
 				},
 			},
 		},
