@@ -334,8 +334,16 @@
       // Add log to UI
       document.getElementById('logs').innerHTML += `<div>Inicializando WebRTC: ${isHost ? 'Host' : 'Espectador'}, Stream ID: ${streamId}</div>`;
       
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        const error = 'getUserMedia não é suportado neste navegador. Por favor, use HTTPS ou um navegador mais recente.';
+        console.error(error);
+        document.getElementById('logs').innerHTML += `<div style="color: red">${error}</div>`;
+        return;
+      }
+
       navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then(stream => {
+        document.getElementById('logs').innerHTML += '<div style="color: green">Câmera e microfone acessados com sucesso</div>';
         document.getElementById('logs').innerHTML += '<div>Permissão de mídia concedida</div>';
         let pc = new RTCPeerConnection()
         pc.ontrack = function (event) {
@@ -369,8 +377,11 @@
 
         // Função para determinar a URL do WebSocket baseado no ambiente
         function getWebSocketUrl() {
-          // O servidor Go já injetou a URL completa do WebSocket
-          const wsUrl = '{{.}}';
+          // Verifica se estamos em HTTPS e ajusta o protocolo do WebSocket
+          const isSecure = window.location.protocol === 'https:';
+          const wsProtocol = isSecure ? 'wss://' : 'ws://';
+          const host = window.location.host;
+          const wsUrl = `${wsProtocol}${host}/websocket`;
           console.log('WebSocket URL:', wsUrl);
           return wsUrl;
         }

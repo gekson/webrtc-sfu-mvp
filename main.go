@@ -8,8 +8,15 @@
 package main
 
 import (
+	"crypto/rand"
+	"crypto/rsa"
+	"crypto/x509"
+	"crypto/x509/pkix"
 	"encoding/json"
+	"encoding/pem"
 	"flag"
+	"math/big"
+	"net"
 	"net/http"
 	"os"
 	"sync"
@@ -66,10 +73,76 @@ type peerConnectionState struct {
 	websocket      *threadSafeWriter
 }
 
+func generateCertificate() error {
+	// Gerar chave privada RSA
+	priv, err := rsa.GenerateKey(rand.Reader, 2048)
+	if err != nil {
+		return err
+	}
+
+	// Criar template para o certificado
+	template := x509.Certificate{
+		SerialNumber: big.NewInt(1),
+		Subject: pkix.Name{
+			Organization: []string{"WebRTC SFU Test"},
+			CommonName:   "localhost",
+		},
+		NotBefore: time.Now(),
+		NotAfter:  time.Now().AddDate(1, 0, 0),
+
+		KeyUsage:              x509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature,
+		ExtKeyUsage:           []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},
+		BasicConstraintsValid: true,
+		IPAddresses:           []net.IP{net.ParseIP("127.0.0.1")},
+		DNSNames:              []string{"localhost"},
+	}
+
+	// Criar certificado
+	derBytes, err := x509.CreateCertificate(rand.Reader, &template, &template, &priv.PublicKey, priv)
+	if err != nil {
+		return err
+	}
+
+	// Criar arquivo do certificado
+	certOut, err := os.Create("cert.pem")
+	if err != nil {
+		return err
+	}
+	defer certOut.Close()
+
+	if err := pem.Encode(certOut, &pem.Block{Type: "CERTIFICATE", Bytes: derBytes}); err != nil {
+		return err
+	}
+
+	// Criar arquivo da chave privada
+	keyOut, err := os.Create("key.pem")
+	if err != nil {
+		return err
+	}
+	defer keyOut.Close()
+
+	privBytes, err := x509.MarshalPKCS8PrivateKey(priv)
+	if err != nil {
+		return err
+	}
+
+	if err := pem.Encode(keyOut, &pem.Block{Type: "PRIVATE KEY", Bytes: privBytes}); err != nil {
+		return err
+	}
+
+	log.Infof("Certificados gerados com sucesso: cert.pem e key.pem")
+	return nil
+}
+
 func main() {
 	// Load .env file
 	if err := godotenv.Load(); err != nil {
 		log.Infof("Arquivo .env não encontrado, usando configurações padrão")
+	}
+
+	// Gerar certificados SSL autoassinados se necessário
+	if err := generateCertificate(); err != nil {
+		log.Errorf("Falha ao gerar certificados SSL: %v", err)
 	}
 
 	// Parse the flags passed to program
@@ -123,9 +196,22 @@ func main() {
 		}
 	}()
 
-	// start HTTP server
-	if err = http.ListenAndServe(*addr, nil); err != nil { //nolint: gosec
-		log.Errorf("Failed to start http server: %v", err)
+	// Configurar certificados SSL
+	certFile := os.Getenv("SSL_CERT_FILE")
+	keyFile := os.Getenv("SSL_KEY_FILE")
+
+	// Se os certificados SSL não estiverem configurados, usar os autoassinados
+	if certFile == "" {
+		certFile = "cert.pem"
+	}
+	if keyFile == "" {
+		keyFile = "key.pem"
+	}
+
+	// Iniciar servidor HTTPS
+	log.Infof("Iniciando servidor HTTPS na porta %s", *addr)
+	if err = http.ListenAndServeTLS(*addr, certFile, keyFile, nil); err != nil {
+		log.Errorf("Falha ao iniciar servidor HTTPS: %v", err)
 	}
 }
 
