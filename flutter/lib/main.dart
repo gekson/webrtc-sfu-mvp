@@ -4,17 +4,52 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
+import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
+import 'package:web_socket_channel/io.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'widgets/chat_widget.dart';
 import 'widgets/local_video_widget.dart';
 import 'widgets/remote_videos_grid.dart';
 import 'screens/home_screen.dart';
 
-void main() => runApp(const AppWrapper());
+// Classe para aceitar certificados SSL autoassinados
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+
+  // Método estático para aplicar a configuração globalmente
+  static void applyOverrides() {
+    HttpOverrides.global = MyHttpOverrides();
+    print('Configuração de segurança para certificados autoassinados aplicada');
+  }
+}
+
+Future<void> main() async {
+  // Carrega o arquivo .env
+  try {
+    await dotenv.load(fileName: ".env");
+  } catch (e) {
+    print("Erro ao carregar arquivo .env: $e");
+    // Tenta carregar de caminhos alternativos
+    try {
+      await dotenv.load(fileName: "../flutter/.env");
+    } catch (e) {
+      print(
+          "Não foi possível carregar o arquivo .env de caminhos alternativos: $e");
+    }
+  }
+  runApp(const AppWrapper());
+}
 
 // Wrapper para a aplicação
 class AppWrapper extends StatelessWidget {
@@ -54,8 +89,24 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // Configuration for different environments
-  static const String _serverIP = String.fromEnvironment('SERVER_IP',
-      defaultValue: '10.0.2.2'); // Default for Android emulator
+  static String get _serverIP {
+    print('******* - SERVERIP:');
+    return '129.153.236.194';
+    // return '192.168.0.37';
+    // // Tenta ler do arquivo .env primeiro
+    // final envServerIP = dotenv.env['SERVER_IP'];
+    // print(envServerIP);
+    // if (envServerIP != null && envServerIP.isNotEmpty) return envServerIP;
+
+    // // Verifica se está rodando no emulador Android
+    // if (Platform.isAndroid) return '10.0.2.2';
+
+    // // Fallback para desenvolvimento local
+    // return '192.168.0.37';
+  }
+
+  static const bool _allowBadCertificates =
+      true; // Permitir certificados autoassinados em desenvolvimento
 
   // Local media
   final _localRenderer = RTCVideoRenderer();
@@ -82,6 +133,11 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     print(
         'MyApp initState - isHost: ${widget.isHost}, streamId: ${widget.streamId}, userId: ${widget.userId}');
+
+    // Aplicar configuração de segurança antes de qualquer conexão
+    MyHttpOverrides.applyOverrides();
+    print('Iniciando conexão WebRTC segura');
+
     connect();
 
     // Envia informação sobre o tipo de usuário (host ou cliente)
@@ -181,19 +237,40 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> connect() async {
-    print('Iniciando conexão WebRTC');
-    void _cleanupRenderer(MediaStream stream) {
-      setState(() {
-        _remoteRenderers.removeWhere((renderer) {
-          if (renderer.srcObject?.id == stream.id) {
-            renderer.dispose();
-            return true;
-          }
-          return false;
-        });
-      });
+    print('Iniciando conexão WebRTC segura');
+
+    // Desativar verificação de certificados antes de qualquer conexão
+    if (_allowBadCertificates) {
+      // Configuração para ambiente de desenvolvimento - aceita certificados autoassinados
+      HttpOverrides.global = MyHttpOverrides();
+      print('Configuração de segurança para desenvolvimento aplicada');
     }
 
+    // Conectar ao WebSocket usando WSS
+    final wsUrl = 'wss://$_serverIP:8080/websocket';
+    print('Conectando ao WebSocket: $wsUrl');
+
+    try {
+      // Simplificar a conexão WebSocket para evitar problemas com certificados
+      final socket = await WebSocket.connect(wsUrl);
+      _socket = IOWebSocketChannel(socket);
+      print('Conexão WebSocket estabelecida');
+
+      // Configurar WebRTC após conexão WebSocket bem-sucedida
+      await _setupWebRTC();
+
+      // Configurar listener para mensagens WebSocket
+      _setupWebSocketListeners();
+    } catch (e) {
+      print('Erro ao conectar ao WebSocket: $e');
+      // Tenta reconectar após 5 segundos
+      Future.delayed(const Duration(seconds: 5), () {
+        if (mounted) connect();
+      });
+    }
+  }
+
+  Future<void> _setupWebRTC() async {
     try {
       _peerConnection = await createPeerConnection({}, {});
 
@@ -216,129 +293,129 @@ class _MyAppState extends State<MyApp> {
           })
         }));
       };
+
+      _peerConnection.onTrack = (event) async {
+        if (event.track.kind == 'video' && event.streams.isNotEmpty) {
+          _addLog('Novo stream de vídeo recebido');
+          var renderer = RTCVideoRenderer();
+          await renderer.initialize();
+          renderer.srcObject = event.streams[0];
+
+          setState(() {
+            if (!_remoteRenderers
+                .any((r) => r.srcObject?.id == event.streams[0].id)) {
+              _remoteRenderers.add(renderer);
+            }
+          });
+
+          event.streams[0].onRemoveTrack = (track) {
+            _addLog('Track removido: ${track.toString()}');
+            _cleanupRenderer(event.streams[0]);
+          };
+        }
+      };
+
+      _peerConnection.onRemoveStream = (stream) {
+        _addLog('Stream removido: ${stream.id}');
+        _cleanupRenderer(stream);
+      };
     } catch (e) {
       _addLog('Erro ao inicializar conexão WebRTC: $e');
       print('Erro ao inicializar conexão WebRTC: $e');
     }
+  }
 
-    _peerConnection.onTrack = (event) async {
-      if (event.track.kind == 'video' && event.streams.isNotEmpty) {
-        _addLog('Novo stream de vídeo recebido');
-        var renderer = RTCVideoRenderer();
-        await renderer.initialize();
-        renderer.srcObject = event.streams[0];
-
-        setState(() {
-          if (!_remoteRenderers
-              .any((r) => r.srcObject?.id == event.streams[0].id)) {
-            _remoteRenderers.add(renderer);
-          }
-        });
-
-        event.streams[0].onRemoveTrack = (track) {
-          _addLog('Track removido: ${track.toString()}');
-          _cleanupRenderer(event.streams[0]);
-        };
-      }
-    };
-
-    _peerConnection.onRemoveStream = (stream) {
-      _addLog('Stream removido: ${stream.id}');
-      _cleanupRenderer(stream);
-    };
-
-    final wsUrl = 'ws://$_serverIP:8080/websocket';
-    _addLog("Conectando a $wsUrl");
-    print("Tentando conectar ao WebSocket: $wsUrl");
-
-    try {
-      print("Iniciando conexão WebSocket...");
-      final socket = WebSocketChannel.connect(Uri.parse(wsUrl));
-      _socket = socket;
-      print("Conexão WebSocket estabelecida com sucesso");
-
-      socket.stream.listen((raw) async {
-        print(
-            "Mensagem WebSocket recebida: ${raw.toString().substring(0, min(30, raw.toString().length))}...");
-        _addLog(
-            "Mensagem recebida: ${raw.toString().substring(0, min(50, raw.toString().length))}...");
-        Map<String, dynamic> msg = jsonDecode(raw);
-
-        switch (msg['event']) {
-          case 'candidate':
-            final parsed = jsonDecode(msg['data']);
-            _peerConnection
-                .addCandidate(RTCIceCandidate(parsed['candidate'], '', 0));
-            break;
-          case 'offer':
-            final offer = jsonDecode(msg['data']);
-            await _peerConnection.setRemoteDescription(
-                RTCSessionDescription(offer['sdp'], offer['type']));
-            RTCSessionDescription answer =
-                await _peerConnection.createAnswer({});
-            await _peerConnection.setLocalDescription(answer);
-
-            _socket?.sink.add(jsonEncode({
-              'event': 'answer',
-              'data': jsonEncode({'type': answer.type, 'sdp': answer.sdp}),
-            }));
-            break;
-          case 'chat':
-            _addLog('Mensagem de chat recebida: ${msg['data']}');
-            if (_chatKey.currentState != null) {
-              _chatKey.currentState!.addMessage(msg['data'], false);
-            }
-            break;
-          case 'permission_request':
-            final request = jsonDecode(msg['data']);
-            if (widget.isHost && request['streamId'] == widget.streamId) {
-              // Mostra diálogo de confirmação para o host
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: const Text('Solicitação de Permissão'),
-                  content: Text(
-                      'Usuário ${request['userId']} solicita permissão para ativar a câmera.'),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: const Text('Recusar'),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        _grantCameraPermission(request['userId']);
-                        Navigator.pop(context);
-                      },
-                      child: const Text('Permitir'),
-                    ),
-                  ],
-                ),
-              );
-            }
-            break;
-          case 'permission_granted':
-            final permission = jsonDecode(msg['data']);
-            if (permission['userId'] == widget.userId &&
-                permission['streamId'] == widget.streamId) {
-              setState(() {
-                _usersWithCameraPermission.add(widget.userId);
-              });
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                    content: Text(
-                        'Permissão concedida! Você pode ativar sua câmera agora.')),
-              );
-            }
-            break;
+  void _cleanupRenderer(MediaStream stream) {
+    setState(() {
+      _remoteRenderers.removeWhere((renderer) {
+        if (renderer.srcObject?.id == stream.id) {
+          renderer.dispose();
+          return true;
         }
-      }, onDone: () {
-        _addLog('Conexão WebSocket fechada');
-      }, onError: (error) {
-        _addLog('Erro WebSocket: $error');
+        return false;
       });
-    } catch (e) {
-      _addLog('Erro de conexão: $e');
-    }
+    });
+  }
+
+  void _setupWebSocketListeners() {
+    _socket?.stream.listen((raw) async {
+      print(
+          "Mensagem WebSocket recebida: ${raw.toString().substring(0, min(30, raw.toString().length))}...");
+      _addLog(
+          "Mensagem recebida: ${raw.toString().substring(0, min(50, raw.toString().length))}...");
+      Map<String, dynamic> msg = jsonDecode(raw);
+
+      switch (msg['event']) {
+        case 'candidate':
+          final parsed = jsonDecode(msg['data']);
+          _peerConnection
+              .addCandidate(RTCIceCandidate(parsed['candidate'], '', 0));
+          break;
+        case 'offer':
+          final offer = jsonDecode(msg['data']);
+          await _peerConnection.setRemoteDescription(
+              RTCSessionDescription(offer['sdp'], offer['type']));
+          RTCSessionDescription answer = await _peerConnection.createAnswer({});
+          await _peerConnection.setLocalDescription(answer);
+
+          _socket?.sink.add(jsonEncode({
+            'event': 'answer',
+            'data': jsonEncode({'type': answer.type, 'sdp': answer.sdp}),
+          }));
+          break;
+        case 'chat':
+          _addLog('Mensagem de chat recebida: ${msg['data']}');
+          if (_chatKey.currentState != null) {
+            _chatKey.currentState!.addMessage(msg['data'], false);
+          }
+          break;
+        case 'permission_request':
+          final request = jsonDecode(msg['data']);
+          if (widget.isHost && request['streamId'] == widget.streamId) {
+            // Mostra diálogo de confirmação para o host
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: const Text('Solicitação de Permissão'),
+                content: Text(
+                    'Usuário ${request['userId']} solicita permissão para ativar a câmera.'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text('Recusar'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      _grantCameraPermission(request['userId']);
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Permitir'),
+                  ),
+                ],
+              ),
+            );
+          }
+          break;
+        case 'permission_granted':
+          final permission = jsonDecode(msg['data']);
+          if (permission['userId'] == widget.userId &&
+              permission['streamId'] == widget.streamId) {
+            setState(() {
+              _usersWithCameraPermission.add(widget.userId);
+            });
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                  content: Text(
+                      'Permissão concedida! Você pode ativar sua câmera agora.')),
+            );
+          }
+          break;
+      }
+    }, onDone: () {
+      _addLog('Conexão WebSocket fechada');
+    }, onError: (error) {
+      _addLog('Erro WebSocket: $error');
+    });
   }
 
   @override
