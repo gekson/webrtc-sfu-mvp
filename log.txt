@@ -1,218 +1,327 @@
-I/flutter (30083): MyApp initState - isHost: false, streamId: stream1, userId: viewer_1744845921810
-I/flutter (30083): Iniciando conexão WebRTC segura
-I/flutter (30083): Configuração de segurança para desenvolvimento aplicada
-I/flutter (30083): ******* - SERVERIP:
-I/flutter (30083): Conectando ao WebSocket: wss://192.168.0.37:8080/websocket
-E/sfu_wsx_example(30083): FrameInsert open fail: No such file or directory
-I/org.webrtc.Logging(30083): NativeLibrary: Loading native library: jingle_peerconnection_so
-I/org.webrtc.Logging(30083): NativeLibrary: Loading library: jingle_peerconnection_so
-D/nativeloader(30083): Load /data/app/~~LJuodloexhLqKp4jB1kVUw==/com.github.pion.flutter_sfu_wsx_example-bM1uPtfCpEFXoAVP29rrrg==/lib/arm64/libjingle_peerconnection_so.so using ns clns-7 from class loader (caller=/data/app/~~LJuodloexhLqKp4jB1kVUw==/com.github.pion.flutter_sfu_wsx_example-bM1uPtfCpEFXoAVP29rrrg==/base.apk): ok
-I/org.webrtc.Logging(30083): PeerConnectionFactory: PeerConnectionFactory was initialized without an injected Loggable. Any existing Loggable will be deleted.
-I/AudioEffect(30083): queryNumberEffects(): *numEffects = 25, ret = 0
-I/org.webrtc.Logging(30083): WebRtcAudioManagerExternal: Sample rate is set to 48000 Hz
-I/org.webrtc.Logging(30083): WebRtcAudioManagerExternal: Sample rate is set to 48000 Hz
-I/org.webrtc.Logging(30083): JavaAudioDeviceModule: createAudioDeviceModule
-I/org.webrtc.Logging(30083): JavaAudioDeviceModule: HW NS will be used.
-I/org.webrtc.Logging(30083): JavaAudioDeviceModule: HW AEC will be used.
-I/org.webrtc.Logging(30083): JavaAudioDeviceModule: Low latency mode will be used.
-I/org.webrtc.Logging(30083): WebRtcAudioEffectsExternal: ctor@[name=main, id=2]
-I/org.webrtc.Logging(30083): WebRtcAudioRecordExternal: ctor@[name=main, id=2]
-I/org.webrtc.Logging(30083): WebRtcAudioTrackExternal: ctor@[name=main, id=2]
-I/org.webrtc.Logging(30083): JavaAudioDeviceModule: setNoiseSuppressorEnabled: true
-W/org.webrtc.Logging(30083): WebRtcAudioRecordExternal: SetNoiseSuppressorEnabled(true)
-E/org.webrtc.Logging(30083): WebRtcAudioEffectsExternal: Attempting to enable or disable nonexistent NoiseSuppressor.
-I/org.webrtc.Logging(30083): EglBase14Impl: Using OpenGL ES version 2
-W/AudioCapabilities(30083): Unsupported mime audio/x-adpcm-dvi-ima
-W/AudioCapabilities(30083): Unsupported mime audio/x-adpcm-dvi-ima
-W/AudioCapabilities(30083): Unsupported mime audio/x-adpcm-ms
-W/AudioCapabilities(30083): Unsupported mime audio/x-adpcm-ms
-W/AudioCapabilities(30083): Unsupported mime audio/alac
-W/AudioCapabilities(30083): Unsupported mime audio/alac
-W/VideoCapabilities(30083): Unsupported mime image/vnd.android.heic
-W/VideoCapabilities(30083): Unsupported mime image/vnd.android.heic
-W/VideoCapabilities(30083): Unsupported mime image/vnd.android.heic
-W/VideoCapabilities(30083): Unsupported mime image/vnd.android.heic
-W/VideoCapabilities(30083): Unsupported mime video/dolby-vision
-W/VideoCapabilities(30083): Unsupported mime video/dolby-vision
-W/VideoCapabilities(30083): Unsupported mime video/apv
-W/VideoCapabilities(30083): Unsupported mime video/apv
-I/org.webrtc.Logging(30083): WebRtcAudioRecordExternal: enableBuiltInAEC(true)
-I/org.webrtc.Logging(30083): WebRtcAudioEffectsExternal: setAEC(true)
-I/org.webrtc.Logging(30083): WebRtcAudioRecordExternal: enableBuiltInNS(true)
-I/org.webrtc.Logging(30083): WebRtcAudioEffectsExternal: setNS(true)
-I/org.webrtc.Logging(30083): PeerConnectionFactory: onWorkerThreadReady
-I/org.webrtc.Logging(30083): PeerConnectionFactory: onNetworkThreadReady
-I/org.webrtc.Logging(30083): PeerConnectionFactory: onSignalingThreadReady
-W/WindowOnBackDispatcher(30083): OnBackInvokedCallback is not enabled for the application.
-W/WindowOnBackDispatcher(30083): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-D/libMEOW (30083): meow new tls: 0xb4000077435102b0
-D/libMEOW (30083): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
-I/org.webrtc.Logging(30083): EglBase14Impl: Using OpenGL ES version 2
-I/org.webrtc.Logging(30083): EglRenderer: Initializing EglRenderer
-I/flutter (30083): Conexão WebSocket estabelecida
-I/FlutterWebRTCPlugin(30083): getUserMedia(audio): mandatory: [], optional: [googNoiseSuppression: true, googEchoCancellation: true, echoCancellation: true, googEchoCancellation2: true, googDAEchoCancellation: true]
-I/FlutterWebRTCPlugin(30083): getUserMedia(video): null
-I/CameraManagerGlobal(30083): Connecting to camera service
-D/CameraExtStub(30083): init android.hardware.camera2.impl.CameraExtImplXiaoMi
-D/CameraInjector(30083): waitForResult: 
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: E
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: X
-W/CameraExtImplXiaoMi(30083): ignore the status update of camera: 2
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-W/CameraExtImplXiaoMi(30083): ignore the status update of camera: 3
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-W/CameraExtImplXiaoMi(30083): ignore the status update of camera: 4
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-W/CameraExtImplXiaoMi(30083): ignore the status update of camera: 5
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-W/CameraManagerGlobal(30083): ignore the torch status update of camera: 2
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-W/CameraManagerGlobal(30083): ignore the torch status update of camera: 3
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-W/CameraManagerGlobal(30083): ignore the torch status update of camera: 4
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-W/CameraManagerGlobal(30083): ignore the torch status update of camera: 5
-D/FlutterWebRTCPlugin(30083): Creating video capturer using Camera2 API.
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-D/CameraInjector(30083): updateCloudCameraControllerInfoAsync: has aleardy start update task.
-D/CameraInjector(30083): waitForResult: 
-D/FlutterWebRTCPlugin(30083): Create front camera 1 succeeded
-D/libMEOW (30083): meow new tls: 0xb4000077435b0350
-D/libMEOW (30083): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
-I/org.webrtc.Logging(30083): EglBase14Impl: Using OpenGL ES version 2
-D/BufferQueueConsumer(30083): [](id:758300000002,api:0,p:-1,c:30083) connect: controlledByApp=true
-I/org.webrtc.Logging(30083): Camera2Enumerator: Get supported formats for camera index 1.
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 2304x1728@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 2304x1296@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1728x1728@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1920x1440@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 2304x1032@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1920x1152@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1920x1088@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1920x1080@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1600x1200@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1440x1088@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1440x1080@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1600x900@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1200x1200@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1280x960@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1080x1080@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1600x720@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1440x720@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1280x720@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 1280x576@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 960x720@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 720x480@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 640x480@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 640x360@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 352x288@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 320x240@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 192x144@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 176x144@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 192x108@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Format: 160x96@30000
-I/org.webrtc.Logging(30083): Camera2Enumerator: Get supported formats for camera index 1 done. Time spent: 11 ms.
-I/org.webrtc.Logging(30083): CameraCapturer: startCapture: 1280x720@30
-D/FlutterWebRTCPlugin(30083): CameraEventsHandler.waitForCameraOpen
-I/org.webrtc.Logging(30083): Camera2Session: Create new camera2 session on camera 1
-I/org.webrtc.Logging(30083): Camera2Session: start
-I/org.webrtc.Logging(30083): Camera2Session: Available preview sizes: [2304x1728, 2304x1296, 1728x1728, 1920x1440, 2304x1032, 1920x1152, 1920x1088, 1920x1080, 1600x1200, 1440x1088, 1440x1080, 1600x900, 1200x1200, 1280x960, 1080x1080, 1600x720, 1440x720, 1280x720, 1280x576, 960x720, 720x480, 640x480, 640x360, 352x288, 320x240, 192x144, 176x144, 192x108, 160x96]
-I/org.webrtc.Logging(30083): Camera2Session: Available fps ranges: [[10.0:10.0], [15.0:15.0], [15.0:20.0], [20.0:20.0], [24.0:24.0], [10.0:30.0], [14.0:30.0], [30.0:30.0]]
-I/org.webrtc.Logging(30083): Camera2Session: Using capture format: 1280x720@[10.0:30.0]
-I/org.webrtc.Logging(30083): Camera2Session: Opening camera 1
-D/FlutterWebRTCPlugin(30083): CameraEventsHandler.onCameraOpening: cameraName=1
-W/EpFrameworkFactory(30083): activated: false jar exist: false
-W/EpFrameworkFactory(30083): activated: false jar exist: false
-D/CameraExtImplXiaoMi(30083): initCameraDevice: 1
-I/CameraManager(30083): Open camera top activityName is com.github.pion.flutter_sfu_wsx_example.MainActivity
-I/org.webrtc.Logging(30083): Camera2Session: Camera opened.
-D/CameraDevice-JV-1(30083): waitUntilIdle: E. id = 1
-D/CameraDevice-JV-1(30083): waitUntilIdle: X
-I/org.webrtc.Logging(30083): Camera2Session: Camera capture session configured.
-I/org.webrtc.Logging(30083): Camera2Session: Using video stabilization.
-I/org.webrtc.Logging(30083): Camera2Session: Auto-focus is not available.
-I/org.webrtc.Logging(30083): Camera2Session: Camera device successfully started.
-I/org.webrtc.Logging(30083): CameraCapturer: Create session done. Switch state: IDLE
-I/org.webrtc.Logging(30083): SurfaceTextureHelper: Setting listener to org.webrtc.Camera2Session$CaptureSessionCallback$$ExternalSyntheticLambda0@db6d7d1
-I/sfu_wsx_example(30083): createIfNeeded: Recreate new EGLImage since dataspace changed
-D/FlutterWebRTCPlugin(30083): CameraEventsHandler.onFirstFrameAvailable
-D/FlutterWebRTCPlugin(30083): Target: 1280x720@30, Actual: 1280x720@30
-D/FlutterWebRTCPlugin(30083): MediaStream id: 41e506cb-b710-4f55-9c80-2f40d263c97c
-I/flutter (30083): Enviando informações do usuário para o servidor
-I/sfu_wsx_example(30083): createIfNeeded: Recreate new EGLImage since dataspace changed
-I/flutter (30083): Informações do usuário enviadas com sucesso
-I/flutter (30083): Conectando a wss://192.168.0.37:8080/websocket
-I/flutter (30083): Tentando conectar ao WebSocket: wss://192.168.0.37:8080/websocket
-I/flutter (30083): Iniciando conexão WebSocket...
-I/sfu_wsx_example(30083): createIfNeeded: Recreate new EGLImage since dataspace changed
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Lqq3JvoK52_5LtOQT6Nohw==/com.google.android.marvin.talkback-_Z6rEBySl-mx_7ua4EEA7w==/base.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Lqq3JvoK52_5LtOQT6Nohw==/com.google.android.marvin.talkback-_Z6rEBySl-mx_7ua4EEA7w==/split_config.arm64_v8a.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~3SQfuFEolX7wwSZtmxMNyg==/com.google.android.apps.translate-N_xw09G57VAFES9aywcYzQ==/base.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/base.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_config.pt.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_config.xxhdpi.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_dynamic_videoplayback_module.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_lenssampledoc.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_mainassetpack.apk' with 1 weak references
-W/sfu_wsx_example(30083): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~oA-f0Y_o8IJllH5abF24Pg==/com.opera.browser-gbG4BXF1LKQ2ZIHu0iFmfA==/base.apk' with 1 weak references
-I/sfu_wsx_example(30083): createIfNeeded: Recreate new EGLImage since dataspace changed
-I/sfu_wsx_example(30083): createIfNeeded: Recreate new EGLImage since dataspace changed
-W/FlutterWebRTCPlugin(30083): FlutterRTCVideoRenderer.setVideoTrack, set video track to afb0ddc7-0bdd-45d4-b0f1-b5c7bb9b1b4b
-I/org.webrtc.Logging(30083): EglRenderer: Releasing.
-I/org.webrtc.Logging(30083): EglRenderer: eglBase detach and release.
-I/org.webrtc.Logging(30083): EglRenderer: Releasing done.
-D/libMEOW (30083): meow new tls: 0xb4000077435e0380
-D/libMEOW (30083): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
-I/org.webrtc.Logging(30083): EglBase14Impl: Using OpenGL ES version 2
-D/libMEOW (30083): meow delete tls: 0xb4000077435102b0
-I/sfu_wsx_example(30083): createIfNeeded: Recreate new EGLImage since dataspace changed
-I/org.webrtc.Logging(30083): EglRenderer: Initializing EglRenderer
-D/BufferQueueConsumer(30083): [](id:758300000003,api:0,p:-1,c:30083) connect: controlledByApp=true
-I/flutter (30083): Conexão WebSocket estabelecida com sucesso
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 25.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4003 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1658 us. Average swapBuffer time: 1403 us.
-I/sfu_wsx_example(30083): createIfNeeded: Recreate new EGLImage since dataspace changed
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4004 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1935 us. Average swapBuffer time: 1440 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4004 ms. Frames received: 121. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1804 us. Average swapBuffer time: 1460 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 31.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4002 ms. Frames received: 120. Dropped: 0. Rendered: 121. Render fps: 30,2. Average render time: 1822 us. Average swapBuffer time: 1398 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4001 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1934 us. Average swapBuffer time: 1493 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4002 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1421 us. Average swapBuffer time: 1426 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4001 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1719 us. Average swapBuffer time: 1507 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4002 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1610 us. Average swapBuffer time: 1582 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4003 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1280 us. Average swapBuffer time: 1217 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4003 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1942 us. Average swapBuffer time: 1622 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4004 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1722 us. Average swapBuffer time: 1366 us.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): CameraStatistics: Camera fps: 30.
-I/org.webrtc.Logging(30083): EglRenderer: Duration: 4004 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1842 us. Average swapBuffer time: 1524 us.
+I/flutter ( 9522): MyApp initState - isHost: false, streamId: stream2, userId: viewer_1744847356610
+I/flutter ( 9522): Configuração de segurança para certificados autoassinados aplicada
+I/flutter ( 9522): Iniciando conexão WebRTC segura
+I/flutter ( 9522): Iniciando conexão WebRTC segura
+I/flutter ( 9522): Configuração de segurança para desenvolvimento aplicada
+I/flutter ( 9522): ******* - SERVERIP:
+I/flutter ( 9522): Conectando ao WebSocket: wss://129.153.236.194:8080/websocket
+W/WindowOnBackDispatcher( 9522): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 9522): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 9522): Conexão WebSocket estabelecida
+I/org.webrtc.Logging( 9522): NativeLibrary: Loading native library: jingle_peerconnection_so
+I/org.webrtc.Logging( 9522): NativeLibrary: Loading library: jingle_peerconnection_so
+D/nativeloader( 9522): Load /data/app/~~8f2-NSOnt4TuHF83etb10g==/com.github.pion.flutter_sfu_wsx_example-uqwNXzNcTrpFjtHO14jHgw==/lib/arm64/libjingle_peerconnection_so.so using ns clns-7 from class loader (caller=/data/app/~~8f2-NSOnt4TuHF83etb10g==/com.github.pion.flutter_sfu_wsx_example-uqwNXzNcTrpFjtHO14jHgw==/base.apk): ok
+I/org.webrtc.Logging( 9522): PeerConnectionFactory: PeerConnectionFactory was initialized without an injected Loggable. Any existing Loggable will be deleted.
+I/AudioEffect( 9522): queryNumberEffects(): *numEffects = 25, ret = 0
+I/org.webrtc.Logging( 9522): WebRtcAudioManagerExternal: Sample rate is set to 48000 Hz
+I/org.webrtc.Logging( 9522): WebRtcAudioManagerExternal: Sample rate is set to 48000 Hz
+I/org.webrtc.Logging( 9522): JavaAudioDeviceModule: createAudioDeviceModule
+I/org.webrtc.Logging( 9522): JavaAudioDeviceModule: HW NS will be used.
+I/org.webrtc.Logging( 9522): JavaAudioDeviceModule: HW AEC will be used.
+I/org.webrtc.Logging( 9522): JavaAudioDeviceModule: Low latency mode will be used.
+I/org.webrtc.Logging( 9522): WebRtcAudioEffectsExternal: ctor@[name=main, id=2]
+I/org.webrtc.Logging( 9522): WebRtcAudioRecordExternal: ctor@[name=main, id=2]
+I/org.webrtc.Logging( 9522): WebRtcAudioTrackExternal: ctor@[name=main, id=2]
+I/org.webrtc.Logging( 9522): JavaAudioDeviceModule: setNoiseSuppressorEnabled: true
+W/org.webrtc.Logging( 9522): WebRtcAudioRecordExternal: SetNoiseSuppressorEnabled(true)
+E/org.webrtc.Logging( 9522): WebRtcAudioEffectsExternal: Attempting to enable or disable nonexistent NoiseSuppressor.
+I/org.webrtc.Logging( 9522): EglBase14Impl: Using OpenGL ES version 2
+W/AudioCapabilities( 9522): Unsupported mime audio/x-adpcm-dvi-ima
+W/AudioCapabilities( 9522): Unsupported mime audio/x-adpcm-dvi-ima
+W/AudioCapabilities( 9522): Unsupported mime audio/x-adpcm-ms
+W/AudioCapabilities( 9522): Unsupported mime audio/x-adpcm-ms
+W/AudioCapabilities( 9522): Unsupported mime audio/alac
+W/AudioCapabilities( 9522): Unsupported mime audio/alac
+W/VideoCapabilities( 9522): Unsupported mime image/vnd.android.heic
+W/VideoCapabilities( 9522): Unsupported mime image/vnd.android.heic
+W/VideoCapabilities( 9522): Unsupported mime image/vnd.android.heic
+W/VideoCapabilities( 9522): Unsupported mime image/vnd.android.heic
+W/VideoCapabilities( 9522): Unsupported mime video/dolby-vision
+W/VideoCapabilities( 9522): Unsupported mime video/dolby-vision
+W/VideoCapabilities( 9522): Unsupported mime video/apv
+W/VideoCapabilities( 9522): Unsupported mime video/apv
+I/org.webrtc.Logging( 9522): WebRtcAudioRecordExternal: enableBuiltInAEC(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioEffectsExternal: setAEC(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioRecordExternal: enableBuiltInNS(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioEffectsExternal: setNS(true)
+I/org.webrtc.Logging( 9522): PeerConnectionFactory: onWorkerThreadReady
+I/org.webrtc.Logging( 9522): PeerConnectionFactory: onSignalingThreadReady
+I/org.webrtc.Logging( 9522): PeerConnectionFactory: onNetworkThreadReady
+I/flutter ( 9522): Enviando informações do usuário para o servidor
+I/flutter ( 9522): Informações do usuário enviadas com sucesso
+D/libMEOW ( 9522): meow new tls: 0xb4000077435102b0
+D/libMEOW ( 9522): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
+I/org.webrtc.Logging( 9522): EglBase14Impl: Using OpenGL ES version 2
+I/org.webrtc.Logging( 9522): EglRenderer: Initializing EglRenderer
+I/FlutterWebRTCPlugin( 9522): getUserMedia(audio): mandatory: [], optional: [googNoiseSuppression: true, googEchoCancellation: true, echoCancellation: true, googEchoCancellation2: true, googDAEchoCancellation: true]
+I/FlutterWebRTCPlugin( 9522): getUserMedia(video): null
+I/CameraManagerGlobal( 9522): Connecting to camera service
+D/CameraExtStub( 9522): init android.hardware.camera2.impl.CameraExtImplXiaoMi
+D/CameraInjector( 9522): waitForResult: 
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: E
+I/CameraInjector( 9522): waitForResult: time out waiting for sUpdateCloudCameraInfoLatch isInCloudCameraAuxPackageList
+W/CameraExtImplXiaoMi( 9522): ignore the status update of camera: 2
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+W/BpBinder( 9522): Slow Binder: BpBinder transact took 360 ms, interface=android.content.IContentProvider, code=21 oneway=false
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: X
+W/CameraExtImplXiaoMi( 9522): ignore the status update of camera: 3
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+W/CameraExtImplXiaoMi( 9522): ignore the status update of camera: 4
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+W/CameraExtImplXiaoMi( 9522): ignore the status update of camera: 5
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+W/sfu_wsx_example( 9522): Long monitor contention with owner main (9522) at java.lang.String[] android.hardware.camera2.CameraManager$CameraManagerGlobal.getCameraIdList(int, int)(CameraManager.java:2584) waiters=0 in void android.hardware.camera2.CameraManager$CameraManagerGlobal.onTorchStatusChanged(int, java.lang.String, int) for 387ms
+W/sfu_wsx_example( 9522): PerfMonitor async binderTransact :  time=389ms interface=android.hardware.ICameraServiceListener code=3
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+W/CameraManagerGlobal( 9522): ignore the torch status update of camera: 2
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+W/CameraManagerGlobal( 9522): ignore the torch status update of camera: 3
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+W/CameraManagerGlobal( 9522): ignore the torch status update of camera: 4
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+W/CameraManagerGlobal( 9522): ignore the torch status update of camera: 5
+D/FlutterWebRTCPlugin( 9522): Creating video capturer using Camera2 API.
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+D/CameraInjector( 9522): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 9522): waitForResult: 
+D/FlutterWebRTCPlugin( 9522): Create front camera 1 succeeded
+D/libMEOW ( 9522): meow new tls: 0xb4000077435b0350
+D/libMEOW ( 9522): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
+I/org.webrtc.Logging( 9522): EglBase14Impl: Using OpenGL ES version 2
+D/BufferQueueConsumer( 9522): [](id:253200000004,api:0,p:-1,c:9522) connect: controlledByApp=true
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Get supported formats for camera index 1.
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 2304x1728@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 2304x1296@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1728x1728@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1920x1440@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 2304x1032@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1920x1152@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1920x1088@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1920x1080@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1600x1200@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1440x1088@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1440x1080@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1600x900@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1200x1200@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1280x960@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1080x1080@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1600x720@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1440x720@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1280x720@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 1280x576@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 960x720@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 720x480@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 640x480@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 640x360@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 352x288@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 320x240@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 192x144@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 176x144@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 192x108@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Format: 160x96@30000
+I/org.webrtc.Logging( 9522): Camera2Enumerator: Get supported formats for camera index 1 done. Time spent: 18 ms.
+I/org.webrtc.Logging( 9522): CameraCapturer: startCapture: 1280x720@30
+D/FlutterWebRTCPlugin( 9522): CameraEventsHandler.waitForCameraOpen
+I/org.webrtc.Logging( 9522): Camera2Session: Create new camera2 session on camera 1
+I/org.webrtc.Logging( 9522): Camera2Session: start
+I/org.webrtc.Logging( 9522): Camera2Session: Available preview sizes: [2304x1728, 2304x1296, 1728x1728, 1920x1440, 2304x1032, 1920x1152, 1920x1088, 1920x1080, 1600x1200, 1440x1088, 1440x1080, 1600x900, 1200x1200, 1280x960, 1080x1080, 1600x720, 1440x720, 1280x720, 1280x576, 960x720, 720x480, 640x480, 640x360, 352x288, 320x240, 192x144, 176x144, 192x108, 160x96]
+I/org.webrtc.Logging( 9522): Camera2Session: Available fps ranges: [[10.0:10.0], [15.0:15.0], [15.0:20.0], [20.0:20.0], [24.0:24.0], [10.0:30.0], [14.0:30.0], [30.0:30.0]]
+I/org.webrtc.Logging( 9522): Camera2Session: Using capture format: 1280x720@[10.0:30.0]
+I/org.webrtc.Logging( 9522): Camera2Session: Opening camera 1
+D/FlutterWebRTCPlugin( 9522): CameraEventsHandler.onCameraOpening: cameraName=1
+W/EpFrameworkFactory( 9522): activated: false jar exist: false
+W/EpFrameworkFactory( 9522): activated: false jar exist: false
+D/CameraExtImplXiaoMi( 9522): initCameraDevice: 1
+I/CameraManager( 9522): Open camera top activityName is com.github.pion.flutter_sfu_wsx_example.MainActivity
+I/org.webrtc.Logging( 9522): Camera2Session: Camera opened.
+D/CameraDevice-JV-1( 9522): waitUntilIdle: E. id = 1
+D/CameraDevice-JV-1( 9522): waitUntilIdle: X
+I/org.webrtc.Logging( 9522): Camera2Session: Camera capture session configured.
+I/org.webrtc.Logging( 9522): Camera2Session: Using video stabilization.
+I/org.webrtc.Logging( 9522): Camera2Session: Auto-focus is not available.
+I/org.webrtc.Logging( 9522): Camera2Session: Camera device successfully started.
+I/org.webrtc.Logging( 9522): CameraCapturer: Create session done. Switch state: IDLE
+I/org.webrtc.Logging( 9522): SurfaceTextureHelper: Setting listener to org.webrtc.Camera2Session$CaptureSessionCallback$$ExternalSyntheticLambda0@c93ad79
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Lqq3JvoK52_5LtOQT6Nohw==/com.google.android.marvin.talkback-_Z6rEBySl-mx_7ua4EEA7w==/base.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Lqq3JvoK52_5LtOQT6Nohw==/com.google.android.marvin.talkback-_Z6rEBySl-mx_7ua4EEA7w==/split_config.arm64_v8a.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~3SQfuFEolX7wwSZtmxMNyg==/com.google.android.apps.translate-N_xw09G57VAFES9aywcYzQ==/base.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/base.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_config.pt.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_config.xxhdpi.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_dynamic_videoplayback_module.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_lenssampledoc.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_mainassetpack.apk' with 1 weak references
+W/sfu_wsx_example( 9522): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~oA-f0Y_o8IJllH5abF24Pg==/com.opera.browser-gbG4BXF1LKQ2ZIHu0iFmfA==/base.apk' with 1 weak references
+I/sfu_wsx_example( 9522): createIfNeeded: Recreate new EGLImage since dataspace changed
+D/FlutterWebRTCPlugin( 9522): CameraEventsHandler.onFirstFrameAvailable
+D/FlutterWebRTCPlugin( 9522): Target: 1280x720@30, Actual: 1280x720@30
+D/FlutterWebRTCPlugin( 9522): MediaStream id: 9fcf6f57-386b-4e25-892d-9b9996b1e85d
+W/Looper  ( 9522): PerfMonitor longMsg : seq=107 plan=20:49:17.856 late=1ms wall=1096ms h=android.os.Handler c=android.os.ResultReceiver$MyRunnable procState=-1
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"offer","data":"{\"ty...
+I/flutter ( 9522): Mensagem recebida: {"event":"offer","data":"{\"type\":\"offer\",\"sdp...
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"candidate","data":"{...
+I/flutter ( 9522): Mensagem recebida: {"event":"candidate","data":"{\"candidate\":\"cand...
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"candidate","data":"{...
+I/flutter ( 9522): Mensagem recebida: {"event":"candidate","data":"{\"candidate\":\"cand...
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"candidate","data":"{...
+I/flutter ( 9522): Mensagem recebida: {"event":"candidate","data":"{\"candidate\":\"cand...
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"candidate","data":"{...
+I/flutter ( 9522): Mensagem recebida: {"event":"candidate","data":"{\"candidate\":\"cand...
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"candidate","data":"{...
+I/flutter ( 9522): Mensagem recebida: {"event":"candidate","data":"{\"candidate\":\"cand...
+I/sfu_wsx_example( 9522): createIfNeeded: Recreate new EGLImage since dataspace changed
+I/sfu_wsx_example( 9522): createIfNeeded: Recreate new EGLImage since dataspace changed
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"candidate","data":"{...
+I/flutter ( 9522): Mensagem recebida: {"event":"candidate","data":"{\"candidate\":\"cand...
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"candidate","data":"{...
+I/flutter ( 9522): Mensagem recebida: {"event":"candidate","data":"{\"candidate\":\"cand...
+W/FlutterWebRTCPlugin( 9522): FlutterRTCVideoRenderer.setVideoTrack, set video track to 54e1c704-e11c-49a1-9860-d9941ad3596d
+I/org.webrtc.Logging( 9522): EglRenderer: Releasing.
+I/org.webrtc.Logging( 9522): EglRenderer: eglBase detach and release.
+I/org.webrtc.Logging( 9522): EglRenderer: Releasing done.
+D/libMEOW ( 9522): meow new tls: 0xb4000077434b0250
+D/libMEOW ( 9522): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
+I/org.webrtc.Logging( 9522): EglBase14Impl: Using OpenGL ES version 2
+D/libMEOW ( 9522): meow delete tls: 0xb4000077435102b0
+I/org.webrtc.Logging( 9522): EglRenderer: Initializing EglRenderer
+I/sfu_wsx_example( 9522): createIfNeeded: Recreate new EGLImage since dataspace changed
+D/BufferQueueConsumer( 9522): [](id:253200000005,api:0,p:-1,c:9522) connect: controlledByApp=true
+I/sfu_wsx_example( 9522): createIfNeeded: Recreate new EGLImage since dataspace changed
+I/sfu_wsx_example( 9522): createIfNeeded: Recreate new EGLImage since dataspace changed
+D/MediaConstraintsUtils( 9522): mandatory constraints are not a map
+D/MediaConstraintsUtils( 9522): optional constraints are not an array
+I/org.webrtc.Logging( 9522): WebRtcAudioRecordExternal: enableBuiltInAEC(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioEffectsExternal: setAEC(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioRecordExternal: enableBuiltInNS(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioEffectsExternal: setNS(true)
+I/org.webrtc.Logging( 9522): NetworkMonitor: Start monitoring with native observer -5476376633849009520 fieldTrialsString: 
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: Network handle: 6647720103949 becomes available: 1547
+I/org.webrtc.Logging( 9522): GlShader: Deleting shader.
+D/FlutterWebRTCPlugin( 9522): onIceGatheringChangeGATHERING
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=70505Kbps LinkDnBandwidth>=47057Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -55, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -55 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 link properties changed
+D/FlutterWebRTCPlugin( 9522): onConnectionChangeCONNECTING
+D/FlutterWebRTCPlugin( 9522): onIceCandidate
+D/FlutterWebRTCPlugin( 9522): onIceCandidate
+D/FlutterWebRTCPlugin( 9522): onIceCandidate
+I/sfu_wsx_example( 9522): NativeAlloc concurrent mark compact GC freed 866KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3560KB/7120KB, paused 107us,7.454ms total 27.783ms
+D/FlutterWebRTCPlugin( 9522): onIceCandidate
+D/FlutterWebRTCPlugin( 9522): onIceCandidate
+D/FlutterWebRTCPlugin( 9522): onIceCandidate
+D/FlutterWebRTCPlugin( 9522): onIceGatheringChangeCOMPLETE
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: Network handle: 6673489907725 becomes available: 1553
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6673489907725 capabilities changed: [ Transports: CELLULAR Capabilities: MMS&SUPL&XCAP&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=14Kbps LinkDnBandwidth>=14Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> SubscriptionIds: {1} UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6673489907725 link properties changed
+D/FlutterWebRTCPlugin( 9522): onIceCandidate
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6673489907725 link properties changed
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6673489907725 capabilities changed: [ Transports: CELLULAR Capabilities: MMS&SUPL&XCAP&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=14Kbps LinkDnBandwidth>=14Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> SubscriptionIds: {1} UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=59979Kbps LinkDnBandwidth>=53351Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -56, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -56 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 25.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4039 ms. Frames received: 121. Dropped: 0. Rendered: 120. Render fps: 29,7. Average render time: 1748 us. Average swapBuffer time: 943 us.
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=70505Kbps LinkDnBandwidth>=47057Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -55, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -55 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/sfu_wsx_example( 9522): createIfNeeded: Recreate new EGLImage since dataspace changed
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=59979Kbps LinkDnBandwidth>=53351Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -57, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -57 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4009 ms. Frames received: 120. Dropped: 0. Rendered: 121. Render fps: 30,2. Average render time: 1771 us. Average swapBuffer time: 1385 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/sfu_wsx_example( 9522): Background concurrent mark compact GC freed 3025KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 4140KB/8280KB, paused 357us,6.584ms total 70.094ms
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4002 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 1836 us. Average swapBuffer time: 1229 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4003 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 2209 us. Average swapBuffer time: 1620 us.
+D/FlutterWebRTCPlugin( 9522): onConnectionChangeFAILED
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=70505Kbps LinkDnBandwidth>=47057Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -55, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -55 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4002 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 2349 us. Average swapBuffer time: 1705 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/flutter ( 9522): Mensagem WebSocket recebida: {"event":"offer","data":"{\"ty...
+I/flutter ( 9522): Mensagem recebida: {"event":"offer","data":"{\"type\":\"offer\",\"sdp...
+I/org.webrtc.Logging( 9522): WebRtcAudioRecordExternal: enableBuiltInAEC(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioEffectsExternal: setAEC(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioRecordExternal: enableBuiltInNS(true)
+I/org.webrtc.Logging( 9522): WebRtcAudioEffectsExternal: setNS(true)
+D/MediaConstraintsUtils( 9522): mandatory constraints are not a map
+D/MediaConstraintsUtils( 9522): optional constraints are not an array
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4007 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 29,9. Average render time: 2175 us. Average swapBuffer time: 1822 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+D/VRI[MainActivity]( 9522): visibilityChanged oldVisibility=true newVisibility=false
+W/libc    ( 9522): Access denied finding property "ro.vendor.display.iris_x7.support"
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6673489907725 link properties changed
+D/BLASTBufferQueue( 9522): [SurfaceView[com.github.pion.flutter_sfu_wsx_example/com.github.pion.flutter_sfu_wsx_example.MainActivity]#3](f:0,a:1) destructor()
+D/BufferQueueConsumer( 9522): [SurfaceView[com.github.pion.flutter_sfu_wsx_example/com.github.pion.flutter_sfu_wsx_example.MainActivity]#3(BLAST Consumer)3](id:253200000003,api:0,p:-1,c:9522) disconnect
+D/BufferQueueConsumer( 9522): [ImageReader-720x1280f22m5-9522-0](id:253200000005,api:0,p:-1,c:9522) disconnect
+D/BufferQueueConsumer( 9522): [](id:253200000006,api:0,p:-1,c:9522) connect: controlledByApp=true
+I/Choreographer( 9522): Skipped 35 frames!  The application may be doing too much work on its main thread.
+D/UserSceneDetector( 9522): invoke error.
+D/BLASTBufferQueue( 9522): [VRI[MainActivity]#2](f:0,a:1) destructor()
+D/BufferQueueConsumer( 9522): [VRI[MainActivity]#2(BLAST Consumer)2](id:253200000002,api:0,p:-1,c:9522) disconnect
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4002 ms. Frames received: 119. Dropped: 0. Rendered: 118. Render fps: 29,5. Average render time: 2209 us. Average swapBuffer time: 1844 us.
+D/ActivityThread( 9522): Fail to check app heapsize due to java.lang.NoSuchMethodException: dalvik.system.VMRuntime.getBlockingGcCountForAlloc []
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 29.
+I/ForceDarkHelperStubImpl( 9522): setViewRootImplForceDark: false for com.github.pion.flutter_sfu_wsx_example.MainActivity@52ac708, reason: AppDarkModeEnable
+D/AppScoutStateMachine( 9522): 9522-ScoutStateMachinecreated
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+D/SecurityManager( 9522): checkAccessControl flag0
+I/org.webrtc.Logging( 9522): CameraCapturer: startCapture: 1280x720@30
+W/org.webrtc.Logging( 9522): CameraCapturer: Session already open
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6673489907725 link properties changed
+D/BufferQueueConsumer( 9522): [](id:253200000007,api:0,p:-1,c:9522) connect: controlledByApp=false
+D/BLASTBufferQueue( 9522): [VRI[MainActivity]#4](f:0,a:0) constructor()
+D/BLASTBufferQueue( 9522): [VRI[MainActivity]#4](f:0,a:0) update width=1220 height=2712 format=-3 mTransformHint=0
+D/BufferQueueConsumer( 9522): [](id:253200000008,api:0,p:-1,c:9522) connect: controlledByApp=false
+D/BLASTBufferQueue( 9522): [SurfaceView[com.github.pion.flutter_sfu_wsx_example/com.github.pion.flutter_sfu_wsx_example.MainActivity]#5](f:0,a:0) constructor()
+D/BLASTBufferQueue( 9522): [SurfaceView[com.github.pion.flutter_sfu_wsx_example/com.github.pion.flutter_sfu_wsx_example.MainActivity]#5](f:0,a:0) update width=1220 height=2712 format=4 mTransformHint=0
+D/VRI[MainActivity]( 9522): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4970 android.view.ViewRootImpl.doTraversal:3561 android.view.ViewRootImpl$TraversalRunnable.run:11760 android.view.Choreographer$CallbackRecord.run:1804 android.view.Choreographer$CallbackRecord.run:1813 
+D/SurfaceView( 9522): UPDATE Surface(name=SurfaceView[com.github.pion.flutter_sfu_wsx_example/com.github.pion.flutter_sfu_wsx_example.MainActivity]#65774)/@0xa262f19, mIsProjectionMode = false
+D/VRI[MainActivity]( 9522): Setup new sync=wmsSync-VRI[MainActivity]#7
+D/BLASTBufferQueue( 9522): [VRI[MainActivity]#4](f:0,a:1) acquireNextBufferLocked size=1220x2712 mFrameNumber=1 applyTransaction=true mTimestamp=435464815085646(auto) mPendingTransactions.size=0 graphicBufferId=40896678592538 transform=0
+D/VRI[MainActivity]( 9522): vri.reportDrawFinished
+D/BLASTBufferQueue( 9522): [SurfaceView[com.github.pion.flutter_sfu_wsx_example/com.github.pion.flutter_sfu_wsx_example.MainActivity]#5](f:0,a:1) acquireNextBufferLocked size=1220x2712 mFrameNumber=1 applyTransaction=true mTimestamp=435464866338492(auto) mPendingTransactions.size=0 graphicBufferId=40896678592539 transform=0
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=70505Kbps LinkDnBandwidth>=47057Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -54, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -54 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4001 ms. Frames received: 120. Dropped: 0. Rendered: 121. Render fps: 30,2. Average render time: 2926 us. Average swapBuffer time: 1809 us.
+I/HandWritingStubImpl( 9522): refreshLastKeyboardType: 1
+I/HandWritingStubImpl( 9522): getCurrentKeyboardType: 1
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 31.
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=70505Kbps LinkDnBandwidth>=47057Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -57, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -57 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4002 ms. Frames received: 119. Dropped: 0. Rendered: 119. Render fps: 29,7. Average render time: 1637 us. Average swapBuffer time: 1237 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4002 ms. Frames received: 121. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 2124 us. Average swapBuffer time: 1782 us.
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=70505Kbps LinkDnBandwidth>=47057Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -54, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -54 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=59979Kbps LinkDnBandwidth>=53351Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -57, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -57 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4012 ms. Frames received: 120. Dropped: 0. Rendered: 121. Render fps: 30,2. Average render time: 2506 us. Average swapBuffer time: 2078 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4002 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 2347 us. Average swapBuffer time: 2101 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 31.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4005 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 2609 us. Average swapBuffer time: 1889 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4009 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 29,9. Average render time: 2193 us. Average swapBuffer time: 1800 us.
+I/org.webrtc.Logging( 9522): NetworkMonitorAutoDetect: handle: 6647720103949 capabilities changed: [ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=70505Kbps LinkDnBandwidth>=47057Kbps TransportInfo: <SSID: <unknown ssid>, BSSID: 02:00:00:00:00:00, MAC: 02:00:00:00:00:00, IP: /192.168.0.34, Security type: 2, Supplicant state: COMPLETED, Wi-Fi standard: 11n, RSSI: -53, Link speed: 144Mbps, Tx Link speed: 144Mbps, Max Supported Tx Link speed: 144Mbps, Rx Link speed: 144Mbps, Max Supported Rx Link speed: 144Mbps, Frequency: 2412MHz, Net ID: -1, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: -1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none><none>MLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>> SignalStrength: -53 UnderlyingNetworks: Null]
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4003 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 2299 us. Average swapBuffer time: 1986 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
+I/org.webrtc.Logging( 9522): EglRenderer: Duration: 4002 ms. Frames received: 120. Dropped: 0. Rendered: 120. Render fps: 30,0. Average render time: 2455 us. Average swapBuffer time: 1946 us.
+I/org.webrtc.Logging( 9522): CameraStatistics: Camera fps: 30.
