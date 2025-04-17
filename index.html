@@ -510,6 +510,12 @@
               if (!candidate) {
                 return console.log('failed to parse candidate')
               }
+              // Fila temporária de candidatos ICE
+              if (!window.pendingCandidates) window.pendingCandidates = [];
+              if (!pc.remoteDescription || !pc.remoteDescription.type) {
+                window.pendingCandidates.push(candidate);
+                return;
+              }
               pc.addIceCandidate(candidate)
                 .catch(err => console.error('Error adding ICE candidate:', err))
               break
@@ -519,6 +525,16 @@
               break
           }
         }
+
+        // Processar candidatos ICE pendentes após definir remote description
+        pc.addEventListener('signalingstatechange', function() {
+          if (pc.remoteDescription && pc.remoteDescription.type && window.pendingCandidates && window.pendingCandidates.length > 0) {
+            window.pendingCandidates.forEach(function(cand) {
+              pc.addIceCandidate(cand).catch(err => console.error('Error adding ICE candidate (pending):', err));
+            });
+            window.pendingCandidates = [];
+          }
+        });
 
         ws.onerror = function(evt) {
           console.log("ERROR: " + evt.data)
