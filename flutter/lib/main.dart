@@ -272,7 +272,19 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> _setupWebRTC() async {
     try {
-      _peerConnection = await createPeerConnection({}, {});
+      // Adiciona servidores STUN públicos para melhor conectividade ICE
+      final iceServers = [
+        {'urls': 'stun:stun.l.google.com:19302'},
+        {'urls': 'stun:stun1.l.google.com:19302'},
+        {'urls': 'stun:stun2.l.google.com:19302'},
+        {'urls': 'stun:stun3.l.google.com:19302'},
+        {'urls': 'stun:stun4.l.google.com:19302'},
+        {'urls': 'stun:stun.stunprotocol.org:3478'},
+        {'urls': 'stun:stun.voip.blackberry.com:3478'},
+      ];
+      _peerConnection = await createPeerConnection({
+        'iceServers': iceServers,
+      }, {});
 
       await _localRenderer.initialize();
       _localStream = await navigator.mediaDevices

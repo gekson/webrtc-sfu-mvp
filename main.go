@@ -535,8 +535,11 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
+		log.Infof("Processando evento: %s", message.Event)
+
 		switch message.Event {
 		case "chat":
+			log.Infof("Evento chat recebido: %s", message.Data)
 			broadcastChat(message.Data, c)
 		case "candidate":
 			candidate := webrtc.ICECandidateInit{}
@@ -565,7 +568,7 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 		default:
-			log.Errorf("unknown message: %+v", message)
+			log.Errorf("Evento desconhecido recebido: %+v", message)
 		}
 	}
 }
