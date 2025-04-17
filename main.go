@@ -74,6 +74,18 @@ type peerConnectionState struct {
 }
 
 func generateCertificate() error {
+	// Verificar se os certificados já existem
+	certExists := fileExists("cert.pem")
+	keyExists := fileExists("key.pem")
+
+	// Se ambos os arquivos existirem, não precisamos gerar novos certificados
+	if certExists && keyExists {
+		log.Infof("Certificados existentes encontrados, reutilizando cert.pem e key.pem")
+		return nil
+	}
+
+	log.Infof("Certificados não encontrados ou incompletos, gerando novos...")
+
 	// Gerar chave privada RSA
 	priv, err := rsa.GenerateKey(rand.Reader, 2048)
 	if err != nil {
@@ -132,6 +144,15 @@ func generateCertificate() error {
 
 	log.Infof("Certificados gerados com sucesso: cert.pem e key.pem")
 	return nil
+}
+
+// Função auxiliar para verificar se um arquivo existe
+func fileExists(filename string) bool {
+	info, err := os.Stat(filename)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return !info.IsDir()
 }
 
 func main() {
