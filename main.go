@@ -382,7 +382,12 @@ func dispatchKeyFrame() {
 
 // Handle incoming websockets
 func websocketHandler(w http.ResponseWriter, r *http.Request) {
-	log.Infof("Nova conexão WebSocket recebida de %s (Origin: %s)", r.RemoteAddr, r.Header.Get("Origin"))
+	log.Infof("Nova conexão WebSocket recebida de %s (Origin: %s, TLS: %v, Headers: %v)", r.RemoteAddr, r.Header.Get("Origin"), r.TLS != nil, r.Header)
+
+	// Configurar o upgrader para logs detalhados
+	upgrader.Error = func(w http.ResponseWriter, r *http.Request, status int, reason error) {
+		log.Errorf("Erro no upgrade do WebSocket: status=%d, reason=%v", status, reason)
+	}
 
 	// Upgrade HTTP request to Websocket
 	unsafeConn, err := upgrader.Upgrade(w, r, nil)
@@ -395,7 +400,10 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 	c := &threadSafeWriter{unsafeConn, sync.Mutex{}}
 
 	// When this frame returns close the Websocket
-	defer c.Close() //nolint
+	defer func() {
+		log.Infof("Fechando conexão WebSocket para %s", r.RemoteAddr)
+		c.Close() //nolint
+	}()
 
 	// Create new PeerConnection with multiple STUN servers and port range configuration
 	portStart := uint16(50000)
@@ -428,7 +436,10 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// When this frame returns close the PeerConnection
-	defer peerConnection.Close() //nolint
+	defer func() {
+		log.Infof("Fechando PeerConnection para %s", r.RemoteAddr)
+		peerConnection.Close() //nolint
+	}()
 
 	// Accept one audio and one video track incoming
 	for _, typ := range []webrtc.RTPCodecType{webrtc.RTPCodecTypeVideo, webrtc.RTPCodecTypeAudio} {
@@ -525,6 +536,9 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 		_, raw, err := c.ReadMessage()
 		if err != nil {
 			log.Errorf("Failed to read message: %v", err)
+			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
+				log.Errorf("WebSocket closed unexpectedly: %v", err)
+			}
 			return
 		}
 
@@ -541,15 +555,55 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 		case "chat":
 			log.Infof("Evento chat recebido: %s", message.Data)
 			broadcastChat(message.Data, c)
+		case "user_info":
+			log.Infof("Evento user_info recebido: %s", message.Data)
+
+			// Decodificar informações do usuário
+			var userInfo struct {
+				UserID      string `json:"userId"`
+				StreamID    string `json:"streamId"`
+				IsHost      bool   `json:"isHost"`
+				StreamTitle string `json:"streamTitle"`
+			}
+
+			if err := json.Unmarshal([]byte(message.Data), &userInfo); err != nil {
+				log.Errorf("Erro ao decodificar user_info: %v | Data recebida: %s", err, message.Data)
+				// Não fecha a conexão, apenas loga o erro
+				break
+			}
+
+			log.Infof("Usuário conectado: ID=%s, Stream=%s, IsHost=%v, Title=%s",
+				userInfo.UserID, userInfo.StreamID, userInfo.IsHost, userInfo.StreamTitle)
+		case "offer":
+			offer := webrtc.SessionDescription{}
+			if err := json.Unmarshal([]byte(message.Data), &offer); err != nil {
+				log.Errorf("Failed to unmarshal json to offer: %v | Data recebida: %s", err, message.Data)
+				// Não fecha a conexão, apenas loga o erro
+				break
+			}
+			log.Infof("Got offer: %v", offer)
+			if peerConnection.SignalingState() != webrtc.SignalingStateStable {
+				log.Warnf("Ignorando oferta recebida porque o estado de sinalização não é 'stable': %v", peerConnection.SignalingState())
+				break
+			}
+			if err := peerConnection.SetRemoteDescription(offer); err != nil {
+				log.Errorf("Failed to set remote description: %v", err)
+				break
+			}
+			// Após definir a remote description, pode-se processar candidatos ICE pendentes se necessário
 		case "candidate":
 			candidate := webrtc.ICECandidateInit{}
 			if err := json.Unmarshal([]byte(message.Data), &candidate); err != nil {
 				log.Errorf("Failed to unmarshal json to candidate: %v", err)
 				return
 			}
-
 			log.Infof("Got candidate: %v", candidate)
-
+			if peerConnection.RemoteDescription() == nil {
+				log.Warnf("Remote description ainda não definida. Armazenando candidato ICE para processamento posterior.")
+				// Aqui você pode implementar uma fila de candidatos ICE pendentes, se necessário
+				// Exemplo: pendingCandidates = append(pendingCandidates, candidate)
+				return
+			}
 			if err := peerConnection.AddICECandidate(candidate); err != nil {
 				log.Errorf("Failed to add ICE candidate: %v", err)
 				return
@@ -560,9 +614,7 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 				log.Errorf("Failed to unmarshal json to answer: %v", err)
 				return
 			}
-
 			log.Infof("Got answer: %v", answer)
-
 			if err := peerConnection.SetRemoteDescription(answer); err != nil {
 				log.Errorf("Failed to set remote description: %v", err)
 				return

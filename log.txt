@@ -1,4 +1,291 @@
-sfu-ws ERROR: 2025/04/17 12:04:12 Evento desconhecido recebido: &{Event:offer Data:{"sdp":"v=0\r\no=- 8305050859053651236 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS c97ebaf7-fbf1-407d-b265-492bfb431266\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:ap7o\r\na=ice-pwd:Gd9kq3jBhGJBoRv0qgwjFUfc\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A3:8C:86:A9:31:55:27:ED:FE:FE:8F:1E:A0:2D:AA:FE:09:89:AD:0F:EC:68:49:44:15:3F:A7:58:05:2A:74:44\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendrecv\r\na=msid:c97ebaf7-fbf1-407d-b265-492bfb431266 f4a41fc5-a2e7-4e03-bbb7-6299e142126c\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:1788586121 cname:ACY2I1SGEeh9RbIJ\r\na=ssrc:1788586121 msid:c97ebaf7-fbf1-407d-b265-492bfb431266 f4a41fc5-a2e7-4e03-bbb7-6299e142126c\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 102 103 104 105 106 107 108 109 127 125 112 113 114\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:ap7o\r\na=ice-pwd:Gd9kq3jBhGJBoRv0qgwjFUfc\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A3:8C:86:A9:31:55:27:ED:FE:FE:8F:1E:A0:2D:AA:FE:09:89:AD:0F:EC:68:49:44:15:3F:A7:58:05:2A:74:44\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:c97ebaf7-fbf1-407d-b265-492bfb431266 a819b5b6-9d83-4046-95aa-a461407ac174\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 H264/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H265/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=rtpmap:105 rtx/90000\r\na=fmtp:105 apt=104\r\na=rtpmap:106 VP8/90000\r\na=rtcp-fb:106 goog-remb\r\na=rtcp-fb:106 transport-cc\r\na=rtcp-fb:106 ccm fir\r\na=rtcp-fb:106 nack\r\na=rtcp-fb:106 nack pli\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=106\r\na=rtpmap:108 VP9/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 profile-id=0\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:127 VP9/90000\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 transport-cc\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=fmtp:127 profile-id=2\r\na=rtpmap:125 rtx/90000\r\na=fmtp:125 apt=127\r\na=rtpmap:112 red/90000\r\na=rtpmap:113 rtx/90000\r\na=fmtp:113 apt=112\r\na=rtpmap:114 ulpfec/90000\r\na=ssrc-group:FID 3367163384 4099014868\r\na=ssrc:3367163384 cname:ACY2I1SGEeh9RbIJ\r\na=ssrc:3367163384 msid:c97ebaf7-fbf1-407d-b265-492bfb431266 a819b5b6-9d83-4046-95aa-a461407ac174\r\na=ssrc:4099014868 cname:ACY2I1SGEeh9RbIJ\r\na=ssrc:4099014868 msid:c97ebaf7-fbf1-407d-b265-492bfb431266 a819b5b6-9d83-4046-95aa-a461407ac174\r\n","type":"offer"}}
-sfu-ws ERROR: 2025/04/17 12:04:12 Evento desconhecido recebido: &{Event:user_info Data:{"userId":"user_1744891448447","streamId":"stream_1744891448447","isHost":true,"streamTitle":"sdsd"}}
-sfu-ws ERROR: 2025/04/17 12:04:13 Evento desconhecido recebido: &{Event:offer Data:{"sdp":"v=0\r\no=- 8305050859053651236 4 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS c97ebaf7-fbf1-407d-b265-492bfb431266\r\nm=video 65301 UDP/TLS/RTP/SAVPF 96 97 106 107 108 109 98 99 100 101 127 124 125 123 104 105 112 113 114\r\nc=IN IP4 192.168.19.147\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=candidate:1906890710 1 udp 2113937151 192.168.19.147 65301 typ host generation 0 network-cost 999\r\na=ice-ufrag:3zDc\r\na=ice-pwd:rXHKdvxsXXTtu6vw9GUOR+LP\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A3:8C:86:A9:31:55:27:ED:FE:FE:8F:1E:A0:2D:AA:FE:09:89:AD:0F:EC:68:49:44:15:3F:A7:58:05:2A:74:44\r\na=setup:actpass\r\na=mid:0\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:2 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:3 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:13 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:12 urn:3gpp:video-orientation\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=sendrecv\r\na=msid:c97ebaf7-fbf1-407d-b265-492bfb431266 a819b5b6-9d83-4046-95aa-a461407ac174\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:106 H264/90000\r\na=rtcp-fb:106 goog-remb\r\na=rtcp-fb:106 transport-cc\r\na=rtcp-fb:106 ccm fir\r\na=rtcp-fb:106 nack\r\na=rtcp-fb:106 nack pli\r\na=fmtp:106 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=106\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:127 H264/90000\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 transport-cc\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:124 rtx/90000\r\na=fmtp:124 apt=127\r\na=rtpmap:125 H264/90000\r\na=rtcp-fb:125 goog-remb\r\na=rtcp-fb:125 transport-cc\r\na=rtcp-fb:125 ccm fir\r\na=rtcp-fb:125 nack\r\na=rtcp-fb:125 nack pli\r\na=fmtp:125 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:123 rtx/90000\r\na=fmtp:123 apt=125\r\na=rtpmap:104 H265/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=rtpmap:105 rtx/90000\r\na=fmtp:105 apt=104\r\na=rtpmap:112 red/90000\r\na=rtpmap:113 rtx/90000\r\na=fmtp:113 apt=112\r\na=rtpmap:114 ulpfec/90000\r\na=ssrc-group:FID 3431882460 2649187214\r\na=ssrc:3431882460 cname:ACY2I1SGEeh9RbIJ\r\na=ssrc:3431882460 msid:c97ebaf7-fbf1-407d-b265-492bfb431266 a819b5b6-9d83-4046-95aa-a461407ac174\r\na=ssrc:2649187214 cname:ACY2I1SGEeh9RbIJ\r\na=ssrc:2649187214 msid:c97ebaf7-fbf1-407d-b265-492bfb431266 a819b5b6-9d83-4046-95aa-a461407ac174\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 9 0 8 63 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:3zDc\r\na=ice-pwd:rXHKdvxsXXTtu6vw9GUOR+LP\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A3:8C:86:A9:31:55:27:ED:FE:FE:8F:1E:A0:2D:AA:FE:09:89:AD:0F:EC:68:49:44:15:3F:A7:58:05:2A:74:44\r\na=setup:actpass\r\na=mid:1\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:11 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:13 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendrecv\r\na=msid:c97ebaf7-fbf1-407d-b265-492bfb431266 f4a41fc5-a2e7-4e03-bbb7-6299e142126c\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:136499196 cname:ACY2I1SGEeh9RbIJ\r\na=ssrc:136499196 msid:c97ebaf7-fbf1-407d-b265-492bfb431266 f4a41fc5-a2e7-4e03-bbb7-6299e142126c\r\n","type":"offer"}}
-sfu-ws ERROR: 2025/04/17 12:04:30 Evento desconhecido recebido: &{Event:user_info Data:{"userId":"viewer_1744891468041","streamId":"example_stream","isHost":false,"streamTitle":"Transmissão de Exemplo"}}
+I/flutter ( 5822): MyApp initState - isHost: false, streamId: stream2, userId: viewer_1744945028573
+I/flutter ( 5822): Configuração de segurança para certificados autoassinados aplicada
+I/flutter ( 5822): Iniciando conexão WebRTC segura
+I/flutter ( 5822): Iniciando conexão WebRTC segura
+I/flutter ( 5822): Configuração de segurança para desenvolvimento aplicada
+I/flutter ( 5822): ******* - SERVERIP:
+I/flutter ( 5822): Conectando ao WebSocket: wss://192.168.0.37:8080/websocket
+W/WindowOnBackDispatcher( 5822): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 5822): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 5822): Conexão WebSocket estabelecida
+I/org.webrtc.Logging( 5822): NativeLibrary: Loading native library: jingle_peerconnection_so
+I/org.webrtc.Logging( 5822): NativeLibrary: Loading library: jingle_peerconnection_so
+D/nativeloader( 5822): Load /data/app/~~QhCtYVHonMzX8IgrCCqnoQ==/com.github.pion.flutter_sfu_wsx_example-4Am0OMkh_92tSi-aNE35kg==/lib/arm64/libjingle_peerconnection_so.so using ns clns-7 from class loader (caller=/data/app/~~QhCtYVHonMzX8IgrCCqnoQ==/com.github.pion.flutter_sfu_wsx_example-4Am0OMkh_92tSi-aNE35kg==/base.apk): ok
+I/org.webrtc.Logging( 5822): PeerConnectionFactory: PeerConnectionFactory was initialized without an injected Loggable. Any existing Loggable will be deleted.
+I/AudioEffect( 5822): queryNumberEffects(): *numEffects = 25, ret = 0
+I/org.webrtc.Logging( 5822): WebRtcAudioManagerExternal: Sample rate is set to 48000 Hz
+I/org.webrtc.Logging( 5822): WebRtcAudioManagerExternal: Sample rate is set to 48000 Hz
+I/org.webrtc.Logging( 5822): JavaAudioDeviceModule: createAudioDeviceModule
+I/org.webrtc.Logging( 5822): JavaAudioDeviceModule: HW NS will be used.
+I/org.webrtc.Logging( 5822): JavaAudioDeviceModule: HW AEC will be used.
+I/org.webrtc.Logging( 5822): JavaAudioDeviceModule: Low latency mode will be used.
+I/org.webrtc.Logging( 5822): WebRtcAudioEffectsExternal: ctor@[name=main, id=2]
+I/org.webrtc.Logging( 5822): WebRtcAudioRecordExternal: ctor@[name=main, id=2]
+I/org.webrtc.Logging( 5822): WebRtcAudioTrackExternal: ctor@[name=main, id=2]
+I/org.webrtc.Logging( 5822): JavaAudioDeviceModule: setNoiseSuppressorEnabled: true
+W/org.webrtc.Logging( 5822): WebRtcAudioRecordExternal: SetNoiseSuppressorEnabled(true)
+E/org.webrtc.Logging( 5822): WebRtcAudioEffectsExternal: Attempting to enable or disable nonexistent NoiseSuppressor.
+I/org.webrtc.Logging( 5822): EglBase14Impl: Using OpenGL ES version 2
+W/AudioCapabilities( 5822): Unsupported mime audio/x-adpcm-dvi-ima
+W/AudioCapabilities( 5822): Unsupported mime audio/x-adpcm-dvi-ima
+W/AudioCapabilities( 5822): Unsupported mime audio/x-adpcm-ms
+W/AudioCapabilities( 5822): Unsupported mime audio/x-adpcm-ms
+W/AudioCapabilities( 5822): Unsupported mime audio/alac
+W/AudioCapabilities( 5822): Unsupported mime audio/alac
+W/VideoCapabilities( 5822): Unsupported mime image/vnd.android.heic
+W/VideoCapabilities( 5822): Unsupported mime image/vnd.android.heic
+W/VideoCapabilities( 5822): Unsupported mime image/vnd.android.heic
+W/VideoCapabilities( 5822): Unsupported mime image/vnd.android.heic
+W/VideoCapabilities( 5822): Unsupported mime video/dolby-vision
+W/VideoCapabilities( 5822): Unsupported mime video/dolby-vision
+W/VideoCapabilities( 5822): Unsupported mime video/apv
+W/VideoCapabilities( 5822): Unsupported mime video/apv
+I/org.webrtc.Logging( 5822): WebRtcAudioRecordExternal: enableBuiltInAEC(true)
+I/org.webrtc.Logging( 5822): WebRtcAudioEffectsExternal: setAEC(true)
+I/org.webrtc.Logging( 5822): WebRtcAudioRecordExternal: enableBuiltInNS(true)
+I/org.webrtc.Logging( 5822): WebRtcAudioEffectsExternal: setNS(true)
+I/org.webrtc.Logging( 5822): PeerConnectionFactory: onWorkerThreadReady
+I/org.webrtc.Logging( 5822): PeerConnectionFactory: onNetworkThreadReady
+I/org.webrtc.Logging( 5822): PeerConnectionFactory: onSignalingThreadReady
+D/libMEOW ( 5822): meow new tls: 0xb4000077434b0250
+D/libMEOW ( 5822): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
+I/org.webrtc.Logging( 5822): EglBase14Impl: Using OpenGL ES version 2
+I/org.webrtc.Logging( 5822): EglRenderer: Initializing EglRenderer
+I/FlutterWebRTCPlugin( 5822): getUserMedia(audio): mandatory: [], optional: [googNoiseSuppression: true, googEchoCancellation: true, echoCancellation: true, googEchoCancellation2: true, googDAEchoCancellation: true]
+I/FlutterWebRTCPlugin( 5822): getUserMedia(video): null
+I/CameraManagerGlobal( 5822): Connecting to camera service
+D/CameraExtStub( 5822): init android.hardware.camera2.impl.CameraExtImplXiaoMi
+D/CameraInjector( 5822): waitForResult: 
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: E
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: X
+W/CameraExtImplXiaoMi( 5822): ignore the status update of camera: 2
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+W/CameraExtImplXiaoMi( 5822): ignore the status update of camera: 3
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+W/CameraExtImplXiaoMi( 5822): ignore the status update of camera: 4
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+W/CameraExtImplXiaoMi( 5822): ignore the status update of camera: 5
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+W/CameraManagerGlobal( 5822): ignore the torch status update of camera: 2
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+W/CameraManagerGlobal( 5822): ignore the torch status update of camera: 3
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+W/CameraManagerGlobal( 5822): ignore the torch status update of camera: 4
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Lqq3JvoK52_5LtOQT6Nohw==/com.google.android.marvin.talkback-_Z6rEBySl-mx_7ua4EEA7w==/base.apk' with 1 weak references
+D/CameraInjector( 5822): waitForResult: 
+W/CameraManagerGlobal( 5822): ignore the torch status update of camera: 5
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Lqq3JvoK52_5LtOQT6Nohw==/com.google.android.marvin.talkback-_Z6rEBySl-mx_7ua4EEA7w==/split_config.arm64_v8a.apk' with 1 weak references
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~3SQfuFEolX7wwSZtmxMNyg==/com.google.android.apps.translate-N_xw09G57VAFES9aywcYzQ==/base.apk' with 1 weak references
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/base.apk' with 1 weak references
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_config.pt.apk' with 1 weak references
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_config.xxhdpi.apk' with 1 weak references
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_dynamic_videoplayback_module.apk' with 1 weak references
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_lenssampledoc.apk' with 1 weak references
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~jxFywc_IzxKNNbk5PKrrDw==/com.microsoft.office.officehubrow-j-VOKQKdPY52m8mHQS5weQ==/split_mainassetpack.apk' with 1 weak references
+W/sfu_wsx_example( 5822): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~oA-f0Y_o8IJllH5abF24Pg==/com.opera.browser-gbG4BXF1LKQ2ZIHu0iFmfA==/base.apk' with 1 weak references
+D/FlutterWebRTCPlugin( 5822): Creating video capturer using Camera2 API.
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+D/CameraInjector( 5822): updateCloudCameraControllerInfoAsync: has aleardy start update task.
+D/CameraInjector( 5822): waitForResult: 
+D/FlutterWebRTCPlugin( 5822): Create front camera 1 succeeded
+D/libMEOW ( 5822): meow new tls: 0xb4000077436103b0
+D/libMEOW ( 5822): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
+I/org.webrtc.Logging( 5822): EglBase14Impl: Using OpenGL ES version 2
+D/BufferQueueConsumer( 5822): [](id:16be00000004,api:0,p:-1,c:5822) connect: controlledByApp=true
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Get supported formats for camera index 1.
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 2304x1728@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 2304x1296@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1728x1728@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1920x1440@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 2304x1032@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1920x1152@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1920x1088@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1920x1080@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1600x1200@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1440x1088@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1440x1080@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1600x900@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1200x1200@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1280x960@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1080x1080@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1600x720@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1440x720@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1280x720@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 1280x576@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 960x720@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 720x480@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 640x480@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 640x360@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 352x288@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 320x240@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 192x144@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 176x144@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 192x108@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Format: 160x96@30000
+I/org.webrtc.Logging( 5822): Camera2Enumerator: Get supported formats for camera index 1 done. Time spent: 11 ms.
+I/org.webrtc.Logging( 5822): CameraCapturer: startCapture: 1280x720@30
+D/FlutterWebRTCPlugin( 5822): CameraEventsHandler.waitForCameraOpen
+I/org.webrtc.Logging( 5822): Camera2Session: Create new camera2 session on camera 1
+I/org.webrtc.Logging( 5822): Camera2Session: start
+I/org.webrtc.Logging( 5822): Camera2Session: Available preview sizes: [2304x1728, 2304x1296, 1728x1728, 1920x1440, 2304x1032, 1920x1152, 1920x1088, 1920x1080, 1600x1200, 1440x1088, 1440x1080, 1600x900, 1200x1200, 1280x960, 1080x1080, 1600x720, 1440x720, 1280x720, 1280x576, 960x720, 720x480, 640x480, 640x360, 352x288, 320x240, 192x144, 176x144, 192x108, 160x96]
+I/org.webrtc.Logging( 5822): Camera2Session: Available fps ranges: [[10.0:10.0], [15.0:15.0], [15.0:20.0], [20.0:20.0], [24.0:24.0], [10.0:30.0], [14.0:30.0], [30.0:30.0]]
+I/org.webrtc.Logging( 5822): Camera2Session: Using capture format: 1280x720@[10.0:30.0]
+I/org.webrtc.Logging( 5822): Camera2Session: Opening camera 1
+D/FlutterWebRTCPlugin( 5822): CameraEventsHandler.onCameraOpening: cameraName=1
+W/EpFrameworkFactory( 5822): activated: false jar exist: false
+W/EpFrameworkFactory( 5822): activated: false jar exist: false
+D/CameraExtImplXiaoMi( 5822): initCameraDevice: 1
+I/CameraManager( 5822): Open camera top activityName is com.github.pion.flutter_sfu_wsx_example.MainActivity
+I/org.webrtc.Logging( 5822): Camera2Session: Camera opened.
+D/CameraDevice-JV-1( 5822): waitUntilIdle: E. id = 1
+D/CameraDevice-JV-1( 5822): waitUntilIdle: X
+I/org.webrtc.Logging( 5822): Camera2Session: Camera capture session configured.
+I/org.webrtc.Logging( 5822): Camera2Session: Using video stabilization.
+I/org.webrtc.Logging( 5822): Camera2Session: Auto-focus is not available.
+W/sfu_wsx_example( 5822): Long monitor contention with owner main_texture_camera_thread (8802) at void android.hardware.camera2.impl.CameraDeviceImpl.waitUntilIdle()(CameraDeviceImpl.java:1521) waiters=0 in void android.hardware.camera2.impl.CameraDeviceImpl$4.run() for 109ms
+I/org.webrtc.Logging( 5822): Camera2Session: Camera device successfully started.
+I/org.webrtc.Logging( 5822): CameraCapturer: Create session done. Switch state: IDLE
+I/org.webrtc.Logging( 5822): SurfaceTextureHelper: Setting listener to org.webrtc.Camera2Session$CaptureSessionCallback$$ExternalSyntheticLambda0@2e7aa6c
+I/sfu_wsx_example( 5822): createIfNeeded: Recreate new EGLImage since dataspace changed
+D/FlutterWebRTCPlugin( 5822): CameraEventsHandler.onFirstFrameAvailable
+D/FlutterWebRTCPlugin( 5822): Target: 1280x720@30, Actual: 1280x720@30
+D/FlutterWebRTCPlugin( 5822): MediaStream id: 7ab66b5a-def8-4d84-bcfe-c9884c1147b8
+I/flutter ( 5822): Enviando informações do usuário para o servidor
+I/flutter ( 5822): Informações do usuário enviadas com sucesso
+I/sfu_wsx_example( 5822): createIfNeeded: Recreate new EGLImage since dataspace changed
+W/FlutterWebRTCPlugin( 5822): FlutterRTCVideoRenderer.setVideoTrack, set video track to f7e16e9a-92c2-4b1f-84ef-f947f72f3c12
+I/org.webrtc.Logging( 5822): EglRenderer: Releasing.
+I/org.webrtc.Logging( 5822): EglRenderer: eglBase detach and release.
+I/org.webrtc.Logging( 5822): EglRenderer: Releasing done.
+D/libMEOW ( 5822): meow new tls: 0xb4000077436d0470
+D/libMEOW ( 5822): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
+I/org.webrtc.Logging( 5822): EglBase14Impl: Using OpenGL ES version 2
+D/libMEOW ( 5822): meow delete tls: 0xb4000077434b0250
+I/org.webrtc.Logging( 5822): EglRenderer: Initializing EglRenderer
+I/sfu_wsx_example( 5822): createIfNeeded: Recreate new EGLImage since dataspace changed
+D/BufferQueueConsumer( 5822): [](id:16be00000005,api:0,p:-1,c:5822) connect: controlledByApp=true
+I/sfu_wsx_example( 5822): createIfNeeded: Recreate new EGLImage since dataspace changed
+I/sfu_wsx_example( 5822): createIfNeeded: Recreate new EGLImage since dataspace changed
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 7.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4033 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 9,9. Average render time: 1061 us. Average swapBuffer time: 649 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4002 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 1548 us. Average swapBuffer time: 1263 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4002 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 1103 us. Average swapBuffer time: 1050 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4001 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 1266 us. Average swapBuffer time: 1111 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4003 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2443 us. Average swapBuffer time: 2115 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4005 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2637 us. Average swapBuffer time: 2265 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4004 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2649 us. Average swapBuffer time: 2236 us.
+D/VRI[MainActivity]( 5822): visibilityChanged oldVisibility=true newVisibility=false
+D/BufferQueueConsumer( 5822): [ImageReader-720x1280f22m5-5822-0](id:16be00000005,api:0,p:-1,c:5822) disconnect
+D/UserSceneDetector( 5822): invoke error.
+D/BLASTBufferQueue( 5822): [VRI[MainActivity]#2](f:0,a:1) destructor()
+D/BufferQueueConsumer( 5822): [VRI[MainActivity]#2(BLAST Consumer)2](id:16be00000002,api:0,p:-1,c:5822) disconnect
+D/ActivityThread( 5822): Fail to check app heapsize due to java.lang.NoSuchMethodException: dalvik.system.VMRuntime.getBlockingGcCountForAlloc []
+D/BLASTBufferQueue( 5822): [SurfaceView[com.github.pion.flutter_sfu_wsx_example/com.github.pion.flutter_sfu_wsx_example.MainActivity]#3](f:0,a:1) destructor()
+D/BufferQueueConsumer( 5822): [SurfaceView[com.github.pion.flutter_sfu_wsx_example/com.github.pion.flutter_sfu_wsx_example.MainActivity]#3(BLAST Consumer)3](id:16be00000003,api:0,p:-1,c:5822) disconnect
+D/BufferQueueConsumer( 5822): [](id:16be00000006,api:0,p:-1,c:5822) connect: controlledByApp=true
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4009 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2592 us. Average swapBuffer time: 1994 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/flutter ( 5822): Conexão WebSocket fechada
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4009 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2601 us. Average swapBuffer time: 2251 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4005 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2591 us. Average swapBuffer time: 2367 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4003 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 1850 us. Average swapBuffer time: 1684 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4002 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2627 us. Average swapBuffer time: 2375 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4004 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2935 us. Average swapBuffer time: 2582 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4007 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2955 us. Average swapBuffer time: 2458 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4007 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2749 us. Average swapBuffer time: 2384 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4005 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2562 us. Average swapBuffer time: 2335 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4004 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2570 us. Average swapBuffer time: 2385 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4007 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2775 us. Average swapBuffer time: 2349 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/sfu_wsx_example( 5822): Background concurrent mark compact GC freed 3599KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 4128KB/8256KB, paused 342us,6.233ms total 66.646ms
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4006 ms. Frames received: 40. Dropped: 0. Rendered: 40. Render fps: 10,0. Average render time: 2908 us. Average swapBuffer time: 2563 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4005 ms. Frames received: 41. Dropped: 0. Rendered: 41. Render fps: 10,2. Average render time: 2999 us. Average swapBuffer time: 2453 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4003 ms. Frames received: 40. Dropped: 0. Rendered: 39. Render fps: 9,7. Average render time: 2793 us. Average swapBuffer time: 2423 us.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): CameraStatistics: Camera fps: 10.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4010 ms. Frames received: 40. Dropped: 0. Rendered: 41. Render fps: 10,2. Average render time: 2989 us. Average swapBuffer time: 2491 us.
+W/CameraDevice-JV-1( 5822): Device error received, code 6, frame number 0, request ID -1, subseq ID 0
+E/org.webrtc.Logging( 5822): Camera2Session: Error: Camera device could not be opened due to a device policy.
+I/org.webrtc.Logging( 5822): Camera2Session: Stop internal
+I/org.webrtc.Logging( 5822): SurfaceTextureHelper: stopListening()
+E/CameraCaptureSession( 5822): Session 0: Exception while stopping repeating: 
+E/CameraCaptureSession( 5822): android.hardware.camera2.CameraAccessException: CAMERA_ERROR (3): The camera device has encountered a serious error
+E/CameraCaptureSession( 5822): 	at android.hardware.camera2.impl.CameraDeviceImpl.checkIfCameraClosedOrInError(CameraDeviceImpl.java:2697)
+E/CameraCaptureSession( 5822): 	at android.hardware.camera2.impl.CameraDeviceImpl.stopRepeating(CameraDeviceImpl.java:1471)
+E/CameraCaptureSession( 5822): 	at android.hardware.camera2.impl.CameraCaptureSessionImpl.close(CameraCaptureSessionImpl.java:590)
+E/CameraCaptureSession( 5822): 	at org.webrtc.Camera2Session.stopInternal(Camera2Session.java:384)
+E/CameraCaptureSession( 5822): 	at org.webrtc.Camera2Session.reportError(Camera2Session.java:405)
+E/CameraCaptureSession( 5822): 	at org.webrtc.Camera2Session.-$$Nest$mreportError(Unknown Source:0)
+E/CameraCaptureSession( 5822): 	at org.webrtc.Camera2Session$CameraStateCallback.onError(Camera2Session.java:110)
+E/CameraCaptureSession( 5822): 	at android.hardware.camera2.impl.CameraDeviceImpl$ClientStateCallback$4.run(CameraDeviceImpl.java:352)
+E/CameraCaptureSession( 5822): 	at android.os.Handler.handleCallback(Handler.java:959)
+E/CameraCaptureSession( 5822): 	at android.os.Handler.dispatchMessage(Handler.java:100)
+E/CameraCaptureSession( 5822): 	at android.os.Looper.loopOnce(Looper.java:249)
+E/CameraCaptureSession( 5822): 	at android.os.Looper.loop(Looper.java:337)
+E/CameraCaptureSession( 5822): 	at android.os.HandlerThread.run(HandlerThread.java:85)
+D/CameraExtImplXiaoMi( 5822): releaseCameraDevice: 1
+D/CameraDevice-JV-1( 5822): close: E. id = 1
+D/libMEOW ( 5822): meow new tls: 0xb4000077436003a0
+D/libMEOW ( 5822): applied 0 plugin for [com.github.pion.flutter_sfu_wsx_example].
+D/CameraDevice-JV-1( 5822): close: X
+W/CameraDevice-JV-1( 5822): Device error received, code 3, frame number 886, request ID 0, subseq ID 0
+W/CameraDevice-JV-1( 5822): Device error received, code 3, frame number 887, request ID 0, subseq ID 0
+I/org.webrtc.Logging( 5822): Camera2Session: Stop done
+D/FlutterWebRTCPlugin( 5822): CameraEventsHandler.onCameraError: errorDescription=Camera device could not be opened due to a device policy.
+I/org.webrtc.Logging( 5822): CameraCapturer: Stop capture
+I/org.webrtc.Logging( 5822): CameraCapturer: Stop capture: Nulling session
+I/org.webrtc.Logging( 5822): CameraCapturer: Stop capture done
+I/org.webrtc.Logging( 5822): Camera2Session: Camera device closed.
+D/FlutterWebRTCPlugin( 5822): CameraEventsHandler.onFirstFrameAvailable
+I/org.webrtc.Logging( 5822): Camera2Session: Stop camera2 session on camera 1
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4009 ms. Frames received: 2. Dropped: 0. Rendered: 2. Render fps: ,5. Average render time: 2562 us. Average swapBuffer time: 2440 us.
+I/org.webrtc.Logging( 5822): EglRenderer: Duration: 4010 ms. Frames received: 0. Dropped: 0. Rendered: 0. Render fps: ,0. Average render time: NA. Average swapBuffer time: NA.
