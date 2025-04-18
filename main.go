@@ -156,6 +156,12 @@ func fileExists(filename string) bool {
 }
 
 func main() {
+	// Configurar logger para nível Info e saída para stdout
+	loggerFactory := logging.NewDefaultLoggerFactory()
+	loggerFactory.DefaultLogLevel = logging.LogLevelInfo
+	log = loggerFactory.NewLogger("sfu-ws")
+
+	log.Infof("*****Iniciando sfu-ws ******")
 	// Load .env file
 	if err := godotenv.Load(); err != nil {
 		log.Infof("Arquivo .env não encontrado, usando configurações padrão")
@@ -251,11 +257,13 @@ func addTrack(t *webrtc.TrackRemote) *webrtc.TrackLocalStaticRTP {
 	}
 
 	trackLocals[t.ID()] = trackLocal
+	log.Infof("TrackLocal criado e adicionado: ID=%s, StreamID=%s", t.ID(), t.StreamID())
 	return trackLocal
 }
 
 // Remove from list of tracks and fire renegotation for all PeerConnections
 func removeTrack(t *webrtc.TrackLocalStaticRTP) {
+	log.Infof("Removendo TrackLocal: ID=%s", t.ID())
 	listLock.Lock()
 	defer func() {
 		listLock.Unlock()
@@ -267,6 +275,7 @@ func removeTrack(t *webrtc.TrackLocalStaticRTP) {
 
 // signalPeerConnections updates each PeerConnection so that it is getting all the expected media tracks
 func signalPeerConnections() {
+	log.Infof("Iniciando signalPeerConnections: %d peerConnections, %d trackLocals", len(peerConnections), len(trackLocals))
 	listLock.Lock()
 	defer func() {
 		listLock.Unlock()
@@ -310,6 +319,7 @@ func signalPeerConnections() {
 			// Add all track we aren't sending yet to the PeerConnection
 			for trackID := range trackLocals {
 				if _, ok := existingSenders[trackID]; !ok {
+					log.Infof("Adicionando track ao PeerConnection: trackID=%s", trackID)
 					if _, err := peerConnections[i].peerConnection.AddTrack(trackLocals[trackID]); err != nil {
 						return true
 					}
@@ -332,6 +342,7 @@ func signalPeerConnections() {
 			}
 
 			log.Infof("Send offer to client: %v", offer)
+			log.Infof("PeerConnection[%d] - LocalDescription: %v", i, peerConnections[i].peerConnection.LocalDescription())
 
 			if err = peerConnections[i].websocket.WriteJSON(&websocketMessage{
 				Event: "offer",
@@ -495,6 +506,7 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 	})
 
 	peerConnection.OnTrack(func(t *webrtc.TrackRemote, _ *webrtc.RTPReceiver) {
+		log.Infof("OnTrack chamada: Kind=%s, ID=%s, StreamID=%s", t.Kind(), t.ID(), t.StreamID())
 		log.Infof("Got remote track: Kind=%s, ID=%s, PayloadType=%d", t.Kind(), t.ID(), t.PayloadType())
 
 		// Create a track to fan out our incoming video to all peers
